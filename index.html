@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiSolutions Online Services - Kishanganj</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f4c81;
+            --secondary: #f58220;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --success: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark);
+            color: white;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .top-bar a { color: #cbd5e1; text-decoration: none; }
+
+        /* Navigation / Header */
+        nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* 1. दुकान का लोगो (Logo) */
+        .shop-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e2e8f0;
+            border: 2px solid var(--primary);
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .logo-text p { font-size: 0.8rem; color: #64748b; }
+
+        /* 2. मुख्य बैनर (Hero Section) */
+        .hero {
+            background: linear-gradient(rgba(15, 76, 129, 0.85), rgba(30, 41, 59, 0.95)), 
+                        url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+
+        /* Buttons */
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary { background: var(--secondary); color: white; }
+        .btn-primary:hover { background: #e07216; transform: translateY(-2px); }
+        .btn-success { background: var(--success); color: white; }
+        .btn-success:hover { background: #16a34a; transform: translateY(-2px); }
+
+        /* Main Content Container */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        /* Live Search & Filter Grid */
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--primary); font-size: 2rem; position: relative; padding-bottom: 10px;}
+        .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px 15px 45px;
+            border: 2px solid #cbd5e1;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .search-box input:focus { border-color: var(--primary); }
+        .search-box i { position: absolute; left: 18px; top: 18px; color: #94a3b8; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-top-color: var(--secondary); }
+        .service-card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; display: block; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .service-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; }
+        .doc-tag { font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+
+        /* Info Banner */
+        .info-strip {
+            background: #fff3e0;
+            border: 1px solid #ffe0b2;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #e65100;
+            margin-bottom: 40px;
+        }
+
+        /* Contact Details & Footer */
+        footer { background: var(--dark); color: #f1f5f9; padding: 60px 20px 20px; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--secondary); font-size: 1.2rem; margin-bottom: 20px; }
+        .footer-col p, .footer-col a { color: #94a3b8; text-decoration: none; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .footer-col a:hover { color: white; }
+        .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #334155; color: #64748b; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div><i class="fa-solid fa-location-dot"></i> धोबिनिया, KTTG रोड, किशनगंज</div>
+        <div>
+            <a href="tel:+919199213137"><i class="fa-solid fa-phone"></i> +91 9199213137</a> | 
+            <a href="mailto:digisolutionskne@gmail.com"><i class="fa-solid fa-envelope"></i> digisolutionskne@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo-container">
+            <!-- अपनी दुकान के लोगो (Logo) का लिंक यहाँ 'src=""' में डालें -->
+            <img src="https://placehold.co/100x100/0f4c81/ffffff?text=DS" alt="DigiSolutions Logo" class="shop-logo">
+            <div class="logo-text">
+                <h1>DigiSolutions</h1>
+                <p>Online Services & Digital Hub</p>
+            </div>
+        </div>
+        <div>
+            <a href="https://wa.me/919199213137" target="_blank" class="btn btn-success" style="padding: 8px 18px; font-size: 0.9rem;">
+                <i class="fa-brands fa-whatsapp"></i> लाइव चैट
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Hero Banner -->
+    <header class="hero">
+        <h2>🏪 डिजीसॉल्यूशंस ऑनलाइन सर्विसेज</h2>
+        <p>आपके शहर किशनगंज में सभी प्रकार की सरकारी योजनाएं, बैंकिंग लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
+        <div class="btn-group">
+            <a href="tel:+919199213137" class="btn btn-primary"><i class="fa-solid fa-phone"></i> अभी कॉल करें</a>
+            <a href="https://wa.me/919199213137?text=नमस्ते, मुझे आपकी डिजिटल सर्विसेज के बारे में जानकारी चाहिए।" target="_blank" class="btn btn-success"><i class="fa-brands fa-whatsapp"></i> व्हाट्सएप संदेश भेजें</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Quick Info Notice -->
+        <div class="info-strip">
+            <i class="fa-solid fa-circle-check"></i> न्यूनतम समय में पारदर्शी, सुरक्षित और सही काम करके ग्राहकों को संतुष्ट करना ही हमारा संकल्प है।
+        </div>
+
+        <!-- Live Search Services Section -->
+        <section>
+            <div class="section-title">
+                <h2>हमारी डिजिटल सेवाएं</h2>
+                <p style="color: #64748b; margin-top: 10px;">अपनी आवश्यक सर्विस को नीचे तुरंत खोजें (Search करें)</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Ticket...">
+            </div>
+
+            <!-- Services Dynamic Grid -->
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will load here using Javascript -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 1.4rem;">DigiSolutions</h4>
+                <p style="margin-top: 15px;">आपकी सुविधा, हमारा लक्ष्य। आज ही हमारी दुकान पर पधारें या फोन पर संपर्क करें। हम ग्राहकों को त्वरित और सही सर्विस देने के लिए प्रतिबद्ध हैं।</p>
+            </div>
+            <div class="footer-col">
+                <h4>दुकान का पता</h4>
+                <p><i class="fa-solid fa-shop"></i> डिजीसॉल्यूशंस ऑनलाइन सर्विसेज</p>
+                <p><i class="fa-solid fa-location-dot"></i> धोबिनिया, KTTG रोड, किशनगंज, बिहार</p>
+            </div>
+            <div class="footer-col">
+                <h4>संपर्क करें</h4>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+919199213137">(+91) 9199213137</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:digisolutionskne@gmail.com">digisolutionskne@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DigiSolutions Online Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Javascript for Live Search & Services Data -->
+    <script>
+        // सभी सर्विसेज का डेटाबेस यहाँ है
+        const servicesData = [
+            { title: "RTPS सेवाएं", icon: "fa-file-invoice", desc: "जाति प्रमाण पत्र, आवासीय प्रमाण पत्र, और आय प्रमाण पत्र का नया आवेदन और डाउनलोड।", doc: "आधार कार्ड, फोटो" },
+            { title: "आधार अपडेट", icon: "fa-address-card", desc: "आधार कार्ड में नाम, पता, जन्मतिथि या मोबाइल नंबर सुधार संबंधी ऑनलाइन कार्य।", doc: "सहायक दस्तावेज" },
+            { title: "पैन कार्ड", icon: "fa-id-card", desc: "नया पैन कार्ड आवेदन, खोए हुए पैन का सुधार या रीप्रिंट की त्वरित सुविधा।", doc: "आधार कार्ड, फोटो" },
+            { title: "पासपोर्ट आवेदन", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
+            { title: "वोटर आईडी कार्ड", icon: "fa-check-to-slot", desc: "नया वोटर कार्ड बनाना, वोटर लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
+            { title: "AEPS / मनी传输", icon: "fa-money-bill-transfer", desc: "आधार कार्ड के माध्यम से किसी भी बैंक से अंगूठा लगाकर सुरक्षित पैसे की निकासी और जमा।", doc: "बैंक खाता / आधार" },
+            { title: "आयुष्मान भारत / E-Shram", icon: "fa-heart-pulse", desc: "5 लाख तक मुफ्त इलाज वाला आयुष्मान कार्ड और श्रमिकों के लिए ई-श्रम कार्ड का पंजीकरण।", doc: "राशन कार्ड, आधार" },
+            { title: "जमीन संबंधित सेवाएं", icon: "fa-map-location-dot", desc: "ऑनलाइन जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, जमाबंदी और खतियान देखना।", doc: "खाता/खेसरा नंबर" },
+            { title: "ट्रेवल टिकट बुकिंग", icon: "fa-plane-departure", desc: "आईआरसीटीसी (IRCTC) द्वारा कंफर्म ट्रेन टिकट, फ्लाइट टिकट और लंबी दूरी की बस बुकिंग।", doc: "यात्री का नाम व आईडी" },
+            { title: "बिजली एवं अन्य बिल भुगतान", icon: "fa-receipt", desc: "नॉर्थ बिहार बिजली बिल, डीटीएच रिचार्ज, मोबाइल बिल एवं अन्य सभी यूटिलिटी भुगतानों की रसीद प्राप्त करें।", doc: "कंज्यूमर नंबर" },
+            { title: "ऑनलाइन फॉर्म एवं रिजल्ट", icon: "fa-graduation-cap", desc: "सभी सरकारी नौकरियों (SSC, Railway, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट" },
+            { title: "फोटो, प्रिंट और लैमिनेशन", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलर फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
+        ];
+
+        const servicesGrid = document.getElementById('servicesGrid');
+        const searchInput = document.getElementById('serviceSearch');
+
+        // सर्विस कार्ड बनाने का फंक्शन
+        function displayServices(services) {
+            servicesGrid.innerHTML = '';
+            if(services.length === 0) {
+                servicesGrid.innerHTML = `<p style="text-align:center; grid-column: 1/-1; color: #64748b; padding: 20px;">कोई सर्विस नहीं मिली! कृपया दूसरा नाम सर्च करें।</p>`;
+                return;
+            }
+            
+            services.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <i class="fa-solid ${service.icon}"></i>
+                    <h3>${service.title}</h3>
+                    <p>${service.desc}</p>
+                    <div>
+                        <span class="doc-tag"><i class="fa-solid fa-paperclip" style="font-size:0.8rem; margin:0; display:inline;"></i> जरूरी: ${service.doc}</span>
+                    </div>
+                `;
+                servicesGrid.appendChild(card);
+            });
+        }
+
+        // शुरुआत में सभी सेवाएं दिखाएं
+        displayServices(servicesData);
+
+        // लाइव सर्च फ़िल्टर इवेंट
+        searchInput.addEventListener('input', (e) => {
+            const searchTxt = e.target.value.toLowerCase();
+            const filtered = servicesData.filter(service => 
+                service.title.toLowerCase().includes(searchTxt) || 
+                service.desc.toLowerCase().includes(searchTxt)
+            );
+            displayServices(filtered);
+        });
+    </script>
+</body>
+</html>
