@@ -71,13 +71,13 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .logo-text h1 {
+        .logo-text-wrapper h1 {
             font-size: 1.6rem;
             color: #0f4c81;
             font-weight: 700;
             line-height: 1.2;
         }
-        .logo-text p { 
+        .logo-text-wrapper p { 
             font-size: 0.85rem; 
             color: #5cb85c; 
             font-weight: 600;
@@ -190,7 +190,7 @@
 
     <div class="top-bar">
         <div>
-            <a href="https://maps.app.goo.gl/j6byxx4B5qjrpZL1A" target="_blank" class="address-link">
+            <a href="https://www.google.com/maps/search/?api=1&query=Dhobiniya+Ward+No+11+Near+Middle+School+Dhobiniya+KTTG+Road+Kishanganj+Bihar" target="_blank" class="address-link">
                 <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
             </a>
         </div>
@@ -202,14 +202,14 @@
 
     <nav>
         <div class="logo-container">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" id="customLogo" alt="DigiSolutions Logo" class="shop-logo">
-            <div class="logo.png">
+            <img src="logo.png" id="customLogo" alt="DigiSolutions Logo" class="shop-logo" onerror="this.style.display='none'">
+            <div class="logo-text-wrapper">
                 <h1>DigiSolutions</h1>
                 <p>One Stop Digital Services</p>
             </div>
         </div>
         <div>
-            <a href="https://wa.me/919199213137" target="_blank" class="btn btn-success" style="padding: 8px 18px; font-size: 0.9rem;">
+            <a href="https://wa.me/919199213137?text=नमस्ते%20DigiSolutions,%20मुझे%20ऑनलाइन%20सर्विस%20के%20बारे%20में%20जानकारी%20चाहिए।" target="_blank" class="btn btn-success" style="padding: 8px 18px; font-size: 0.9rem;">
                 <i class="fa-brands fa-whatsapp"></i> लाइव चैट
             </a>
         </div>
@@ -217,10 +217,10 @@
 
     <header class="hero">
         <h2>🏪 DigiSolutions Online Services</h2>
-        <p>आपके शहर में सभी प्रकार की सरकारी योजनाएं, बैंकिंग लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
+        <p>आपके शहर में सभी प्रकार की सरकारी योजनाएं, banking लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
         <div class="btn-group">
             <a href="tel:+919199213137" class="btn btn-primary"><i class="fa-solid fa-phone"></i> अभी कॉल करें</a>
-            <a href="http://maps.google.com/" target="_blank" class="btn btn-primary" style="background-color: #007bff;"><i class="fa-solid fa-map-location-dot"></i> दुकान का रास्ता देखें (Visit Now)</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Dhobiniya+Ward+No+11+Near+Middle+School+Dhobiniya+KTTG+Road+Kishanganj+Bihar" target="_blank" class="btn btn-primary" style="background-color: #007bff;"><i class="fa-solid fa-map-location-dot"></i> दुकान का रास्ता देखें (Visit Now)</a>
         </div>
     </header>
 
@@ -241,8 +241,7 @@
                 <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Ticket...">
             </div>
 
-            <div class="services-grid" id="servicesGrid">
-                </div>
+            <div class="services-grid" id="servicesGrid"></div>
         </section>
 
     </div>
@@ -251,13 +250,13 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4 style="color: white; font-size: 1.4rem;">DigiSolutions</h4>
-                <p style="margin-top: 15px;">आपकी सुविधा, हमारा लक्ष्य। आज ही हमारी साइबर कैफ़े पर पधारें या फोन पर संपर्क करें। हम ग्राहकों को त्वरित और सही सर्विस देने के लिए प्रतिबद्ध हैं।</p>
+                <p style="margin-top: 15px;">आपकी सुविधा, हमारा लक्ष्य। आज ही हमारी साइबर कैफ़े पर पधारें या फोन पर संपर्क करें। हम ग्राहकों को त्वरित और सही सर्विस देने के लिए प्रतिबद्ध हैं।</p>
             </div>
             <div class="footer-col">
-                <h4>Visit Now(अभी विजिट करें)</h4>
+                <h4>Visit Now (अभी विजिट करें)</h4>
                 <p><i class="fa-solid fa-shop"></i> DigiSolutions Online Services</p>
                 <p>
-                    <a href="https://maps.app.goo.gl/j6byxx4B5qjrpZL1A" target="_blank" style="display:inline; color: #94a3b8;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Dhobiniya+Ward+No+11+Near+Middle+School+Dhobiniya+KTTG+Road+Kishanganj+Bihar" target="_blank" style="display:inline; color: #94a3b8;">
                         <i class="fa-solid fa-location-dot"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
                     </a>
                 </p>
@@ -269,14 +268,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 DigiSolutions Online Services. All Rights Reserved.</p>
+            <p>© 2026 DigiSolutions Online Services. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // लोगो इमेज के नाम को सेट करने का स्थान
-        document.getElementById('customLogo').src = "logo.png"; 
-        
         // सभी सर्विसेज का डेटाबेस
         const servicesData = [
             { title: "RTPS सेवाएं", icon: "fa-file-invoice", desc: "जाति, आवासीय, आय प्रमाण पत्र के साथ-साथ अब आचरण प्रमाण पत्र (Character Certificate) का नया आवेदन और डाउनलोड।", doc: "आधार कार्ड, फोटो, शपथ पत्र" },
@@ -284,13 +280,13 @@
             { title: "पैन कार्ड", icon: "fa-id-card", desc: "नया पैन कार्ड आवेदन, खोए हुए पैन का सुधार या रीप्रिंट की त्वरित सुविधा।", doc: "आधार कार्ड, फोटो" },
             { title: "पासपोर्ट आवेदन", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
             { title: "वोटर आईडी कार्ड", icon: "fa-check-to-slot", desc: "नया वोटर कार्ड बनाना, वोटर लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
-            { title: "AEPS", icon: "fa-money-bill-transfer", desc: "आधार इनेबल्ड पेमेंट सिस्टम (AEPS) के माध्यम से किसी भी बैंक से अंगूठा लगाकर सुरक्षित पैसे की निकासी और बैलेंस चेक।", doc: "बैंक खाता / आधार लिंक" },
+            { title: "AEPS (अंगूठे से पैसे निकालना)", icon: "fa-money-bill-transfer", desc: "आधार इनेबल्ड पेमेंट सिस्टम (AEPS) के माध्यम से किसी भी बैंक से अंगूठा लगाकर सुरक्षित पैसे की निकासी और बैलेंस चेक।", doc: "बैंक खाता / आधार लिंक" },
             { title: "आयुष्मान भारत / E-Shram", icon: "fa-heart-pulse", desc: "5 लाख तक मुफ्त इलाज वाला आयुष्मान कार्ड और श्रमिकों के लिए ई-श्रम कार्ड का पंजीकरण।", doc: "राशन कार्ड, आधार" },
             { title: "जमीन संबंधित सेवाएं", icon: "fa-map-location-dot", desc: "ONLINE जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, जमाबंदी और खतियान देखना।", doc: "खाता/खेसरा नंबर" },
             { title: "ट्रेवल टिकट बुकिंग", icon: "fa-plane-departure", desc: "आईआरसीटीसी (IRCTC) द्वारा कंफर्म ट्रेन टिकट, फ्लाइट टिकट और लंबी दूरी की बस बुकिंग।", doc: "यात्री का नाम व आईडी" },
             { title: "बिजली एवं अन्य बिल भुगतान", icon: "fa-receipt", desc: "बिजली बिल, डीटीएच रिचार्ज, मोबाइल बिल एवं अन्य सभी यूटिलिटी भुगतानों की रसीद प्राप्त करें।", doc: "कंज्यूमर नंबर" },
             { title: "ONLINE FORMS & RESULTS", icon: "fa-graduation-cap", desc: "सभी सरकारी नौकरियों (SSC, Railway, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट" },
-            { title: "फोटो, प्रिंट और लैमिनेशन", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलर फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपीी, हाई-क्वालिटी प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
+            { title: "फोटो, प्रिंट और लैमिनेशन", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलर फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
         ];
 
         const servicesGrid = document.getElementById('servicesGrid');
@@ -310,7 +306,7 @@
                     <i class="fa-solid ${service.icon}"></i>
                     <h3>${service.title}</h3>
                     <p>${service.desc}</p>
-                    <div>
+                    <div style="margin-top: auto;">
                         <span class="doc-tag"><i class="fa-solid fa-paperclip" style="font-size:0.8rem; margin:0; display:inline;"></i> जरूरी: ${service.doc}</span>
                     </div>
                 `;
@@ -318,10 +314,12 @@
             });
         }
 
+        // Initial Display
         displayServices(servicesData);
 
+        // Real-time Search Logic
         searchInput.addEventListener('input', (e) => {
-            const searchTxt = e.target.value.toLowerCase();
+            const searchTxt = e.target.value.toLowerCase().trim();
             const filtered = servicesData.filter(service => 
                 service.title.toLowerCase().includes(searchTxt) || 
                 service.desc.toLowerCase().includes(searchTxt)
