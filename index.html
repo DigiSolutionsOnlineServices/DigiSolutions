@@ -58,7 +58,7 @@
             transform: scale(1.2);
         }
 
-        /* Navigation / Header - Centered & Larger */
+        /* Navigation / Header - Centered & Layout Modified */
         nav {
             background: white;
             padding: 20px;
@@ -73,21 +73,19 @@
 
         .logo-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            text-align: center;
-            gap: 8px;
         }
 
         .logo-row {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
         }
 
         .shop-logo {
-            width: 65px;
-            height: 65px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #76B82A;
@@ -95,12 +93,20 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Image-like Styled Text Logo (Larger) */
+        /* Wrapper for Text and Tagline to keep them together */
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        /* Enlarged DigiSolutions Title */
         .logo-text-wrapper h1 {
-            font-size: 2.6rem;
+            font-size: 3.5rem; /* आकार बड़ा किया गया */
             font-weight: 800;
             letter-spacing: -0.5px;
-            line-height: 1.1;
+            line-height: 1;
             margin: 0;
             display: inline-flex;
             filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.15));
@@ -118,12 +124,13 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Tagline repositioned directly under text */
         .tagline { 
-            font-size: 1rem; 
+            font-size: 1.05rem; 
             color: #64748b; 
             font-weight: 600;
             letter-spacing: 1px;
-            margin-top: 2px;
+            margin-top: 5px;
             text-transform: uppercase;
         }
 
@@ -261,7 +268,8 @@
 
         @media (max-width: 768px) {
             .hero h2 { font-size: 1.8rem; }
-            .logo-text-wrapper h1 { font-size: 2.1rem; }
+            .logo-text-wrapper h1 { font-size: 2.3rem; }
+            .tagline { font-size: 0.85rem; }
             .channel-box { flex-direction: column; text-align: center; }
             .top-bar { justify-content: center; }
         }
@@ -275,23 +283,23 @@
                 <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
             </a>
         </div>
-        <!-- WhatsApp and Telegram Only Icons Chat Links -->
+        <!-- Top Bar Chat Links (Telegram Chat Link) -->
         <div class="top-chat-links">
             <a href="https://wa.me/919199213137" target="_blank" title="WhatsApp Chat" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://t.me/digisolutionskne" target="_blank" title="Telegram Chat" style="color: #0088cc;"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://t.me/digisolutionsonlineservices" target="_blank" title="Telegram Chat" style="color: #0088cc;"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
 
     <nav>
-        <!-- Centered Logo and Text Layout according to Screenshot_20260528-150632~2.jpg -->
         <div class="logo-container">
             <div class="logo-row">
                 <img src="logo.jpg" id="customLogo" alt="DigiSolutions Logo" class="shop-logo">
+                <!-- Tagline added exactly inside the text wrapper under DigiSolutions -->
                 <div class="logo-text-wrapper">
                     <h1><span class="logo-digi">Digi</span><span class="logo-solutions">Solutions</span></h1>
+                    <div class="tagline">One Stop Digital Services</div>
                 </div>
             </div>
-            <div class="tagline">One Stop Digital Services</div>
         </div>
     </nav>
 
@@ -303,7 +311,7 @@
         </div>
     </header>
 
-    <!-- Official Social Media Channels Links (Single Unified Location) -->
+    <!-- Channels Section (Telegram Channel Link) -->
     <div class="updates-container">
         <div class="channel-box">
             <div style="display: flex; align-items: center; gap: 10px;">
@@ -370,7 +378,6 @@
     </footer>
 
     <script>
-        // सभी सर्विसेज का डेटाबेस
         const servicesData = [
             { title: "RTPS सेवाएं", icon: "fa-file-invoice", desc: "जाति, आवासीय, आय प्रमाण पत्र के साथ-साथ अब आचरण प्रमाण पत्र (Character Certificate) का नया आवेदन और डाउनलोड।", doc: "आधार कार्ड, फोटो, शपथ पत्र" },
             { title: "आधार अपडेट", icon: "fa-address-card", desc: "आधार कार्ड में नाम, पता, जन्मतिथि या मोबाइल नंबर सुधार संबंधी ऑनलाइन कार्य।", doc: "सहायक दस्तावेज" },
@@ -411,10 +418,8 @@
             });
         }
 
-        // Initial Display
         displayServices(servicesData);
 
-        // Real-time Search Logic
         searchInput.addEventListener('input', (e) => {
             const searchTxt = e.target.value.toLowerCase().trim();
             const filtered = servicesData.filter(service => 
