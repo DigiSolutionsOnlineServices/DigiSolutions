@@ -57,12 +57,11 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Title और Tagline को सेंटर में रखने के लिए कॉलम लेआउट */
         .logo-text-wrapper {
             display: flex;
             flex-direction: column;
-            align-items: center; /* बिल्कुल बीच में करने के लिए */
-            text-align: center;   /* टेक्स्ट सेंटर अलाइनमेंट के लिए */
+            align-items: center; 
+            text-align: center;   
         }
 
         .logo-text-wrapper h1 {
@@ -87,7 +86,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* टैगलाइन को नाम के नीचे बिल्कुल सेंटर में सेट किया गया */
         .tagline { 
             font-size: 1.05rem; 
             color: #64748b; 
@@ -353,7 +351,7 @@
 
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Land, RTI, Pension, Kisan...">
+                <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Court, Case, RTI, Pension...">
             </div>
 
             <!-- Dynamically populated via Javascript with explicit links -->
@@ -399,8 +397,11 @@
             { title: "बिहार-भूमि सेवाएं", link: "https://biharbhumi.bihar.gov.in/Biharbhumi/", icon: "fa-map-location-dot", desc: "ऑनलाइन जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, म्युटेशन आवेदन और जन-शिकायत।", doc: "खाता/खेसरा/जमाबंदी विवरण" },
             { title: "भू-अभिलेख बिहार", link: "https://bhuabhilekh.bihar.gov.in/login?ref=aW5kZXgucGhw", icon: "fa-map", desc: "डिजिटल हस्ताक्षरित खतियान, जमाबंदी नक़ल और नक्शा निकालने सम्बन्धी लॉगिन सेवाएं।", doc: "खाता/खेसरा नंबर" },
             { title: "ई-निबंधन बिहार", link: "https://nibandhan.bihar.gov.in/", icon: "fa-gavel", desc: "जमीन और मकान रजिस्ट्री, अपॉइंटमेंट बुकिंग और ऑनलाइन सर्टिफाइड कॉपी सम्बन्धी निबंधन पोर्टल।", doc: "रजिस्ट्री दस्तावेज" },
-            { title: "कृषि-विभाग सेवाएं (बिहार)", link: "https://dbtagriculture.bihar.gov.in/", icon: "fa-wheat-awn", desc: "किसान पंजीकरण, डीजल व बीज अनुदान, कृषि इनपुट सब्सिडी और विभिन्न राज्य स्तरीय कृषि योजनाओं का ऑनलाइन लाभ।", doc: "आधार कार्ड, बैंक पासबुक, एलपीसी/जमीन रसीद" },
-            { title: "PM-किसान सम्मान निधि सेवाएं", link: "https://pmkisan.gov.in/", icon: "fa-tractor", desc: "प्रधानमंत्री किसान सम्मान निधि योजना के अंतर्गत नया पंजीकरण, e-KYC अपडेशन, और किस्त भुगतान स्टेटस की जांच।", doc: "आधार कार्ड, मोबाइल नंबर, जमीन दस्तावेज" },
+            { title: "कृषि-विभाग सेवाएं (बिहार)", link: "https://dbtagriculture.bihar.gov.in/", icon: "fa-wheat-awn", desc: "किसान पंजीकरण, डीजल व बीज अनुदान, कृषि इनपुट सब्सिडी और विभिन्न राज्य स्तरीय कृषि योजनाओं का ऑनलाइन लाभ।", doc: "आधार कार्ड, bank पासबुक, एलपीसी/जमीन रसीद" },
+            { title: "PM-किसान सम्मान निधि सेवाएं", link: "https://pmkisan.gov.in/", icon: "fa-tractor", desc: "प्रधानमंत्री किसान सम्मान निधि योजना के अंतर्गत नया पंजीकरण, e-KYC अपडेशन, और किस्त भुगतान स्टेटस की जांच।", doc: "आधार कार्ड, mobile नंबर, जमीन दस्तावेज" },
+            { title: "ई-कोर्ट सेवाएं", link: "https://services.ecourts.gov.in/ecourtindia_v6/", icon: "fa-gavel", desc: "देश की जिला और अधीनस्थ अदालतों के केस स्टेटस, कोर्ट ऑर्डर, और वाद सूची (Cause List) की ऑनलाइन जानकारी।", doc: "केस नंबर / सीएनआर (CNR) नंबर" },
+            { title: "पटना हाई-कोर्ट सेवाएं", link: "https://patnahighcourt.gov.in/", icon: "fa-building-columns", desc: "पटना उच्च न्यायालय से संबंधित केस की स्थिति, जजमेंट, डेली कॉज लिस्ट और अन्य कानूनी अपडेट की ऑनलाइन जांच।", doc: "केस नंबर / टोकन नंबर / साल" },
+            { title: "सुप्रीम-कोर्ट सेवाएं", link: "https://www.sci.gov.in/", icon: "fa-scale-balanced", desc: "भारत के सर्वोच्च न्यायालय (Supreme Court) के केस स्टेटस, दैनिक आदेश, जजमेंट और लाइव हियरिंग से जुड़ी सेवाएं।", doc: "डायरी नंबर / केस नंबर" },
             { title: "ड्राइविंग लाइसेंस सेवाएं", link: "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do", icon: "fa-car", desc: "लर्निंग लाइसेंस, पक्का ड्राइविंग लाइसेंस आवेदन, नवीनीकरण और स्लॉट बुकिंग।", doc: "आधार, आयु एवं एड्रेस प्रूफ" },
             { title: "आयुष्मान भारत सेवाएं", link: "https://beneficiary.nha.gov.in/", icon: "fa-heart-pulse", desc: "5 लाख रुपये तक मुफ्त इलाज वाला आयुष्मान कार्ड पात्रता जाँच और नया पंजीकरण।", doc: "राशन कार्ड, आधार" },
             { title: "ई-श्रम सेवाएं", link: "https://eshram.gov.in/indexmain", icon: "fa-users", desc: "असंगठित क्षेत्र के श्रमिकों के लिए ई-श्रम कार्ड का नया पंजीकरण और अपडेट।", doc: "आधार कार्ड, bank खाता" },
@@ -423,7 +424,7 @@
             { title: "Travel Tickets Services", link: "https://www.irctc.co.in/", icon: "fa-plane-departure", desc: "रेलवे कंफर्म टिकट बुकिंग, तत्काल टिकट, फ्लाइट और लंबी दूरी की बस बुकिंग की त्वरित सुविधा।", doc: "यात्री का नाम व वैध आईडी" },
             { title: "Online Forms & Results", link: "#", icon: "fa-file-signature", desc: "सभी सरकारी नौकरियों (SSC, Railway, BPSC, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट, फोटो" },
             { title: "Bill Payments", link: "#", icon: "fa-receipt", desc: "उत्तर/दक्षिण बिहार बिजली बिल, डीटीएच रिचार्ज, मोबाइल पोस्टपेड बिल एवं अन्य सभी यूटिलिटी भुगतान।", doc: "कंज्यूमर नंबर/अकाउंट नंबर" },
-            { title: "Photo, Printing, Lamination", link: "#", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलर फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी डाक्यूमेंट्स प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
+            { title: "Photo, Printing, Lamination", link: "#", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलाकार फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी डाक्यूमेंट्स प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
         ];
 
         const servicesGrid = document.getElementById('servicesGrid');
