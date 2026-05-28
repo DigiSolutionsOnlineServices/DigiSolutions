@@ -12,7 +12,6 @@
             --dark: #1e293b;
             --light: #f8fafc;
             --success: #22c55e;
-            --telegram: #0088cc;
         }
 
         * {
@@ -42,8 +41,6 @@
         .top-bar a { color: #cbd5e1; text-decoration: none; }
         .top-bar .address-link { color: white; text-decoration: none; display: flex; align-items: center; gap: 5px; }
         .top-bar .address-link:hover { color: var(--secondary); }
-        .top-bar .social-mini { display: flex; gap: 15px; align-items: center; }
-        .top-bar .social-mini a:hover { color: var(--secondary); }
 
         /* Navigation / Header */
         nav {
@@ -56,8 +53,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            flex-wrap: wrap;
-            gap: 15px;
         }
 
         .logo-container {
@@ -89,12 +84,6 @@
             letter-spacing: 0.5px;
         }
 
-        .nav-actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
         /* मुख्य बैनर (Hero Section) */
         .hero {
             background: linear-gradient(rgba(15, 76, 129, 0.85), rgba(30, 41, 59, 0.95)), 
@@ -102,17 +91,17 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
         .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 25px; opacity: 0.9; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
 
         /* Buttons */
-        .btn-group { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 15px; }
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn {
-            padding: 12px 24px;
+            padding: 12px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -122,42 +111,9 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            font-size: 0.95rem;
         }
         .btn-primary { background: var(--secondary); color: white; }
         .btn-primary:hover { background: #e07216; transform: translateY(-2px); }
-        .btn-success { background: var(--success); color: white; }
-        .btn-success:hover { background: #16a34a; transform: translateY(-2px); }
-        .btn-telegram { background: var(--telegram); color: white; }
-        .btn-telegram:hover { background: #0077b3; transform: translateY(-2px); }
-        .btn-maps { background-color: #007bff; color: white; }
-        .btn-maps:hover { background-color: #0069d9; transform: translateY(-2px); }
-
-        /* Channels Section in Hero */
-        .channel-badges {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .channel-link {
-            color: white;
-            text-decoration: none;
-            background: rgba(255,255,255,0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s;
-        }
-        .channel-link:hover {
-            background: rgba(255,255,255,0.2);
-            border-color: white;
-        }
 
         /* Main Content Container */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
@@ -195,15 +151,13 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
             border-top: 4px solid var(--primary);
-            display: flex;
-            flex-direction: column;
             transition: all 0.3s;
         }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-top-color: var(--secondary); }
         .service-card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; display: block; }
         .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        .service-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; flex-grow: 1; }
-        .doc-tag { font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; }
+        .service-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; }
+        .doc-tag { font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
 
         /* Info Banner */
         .info-strip {
@@ -219,7 +173,7 @@
 
         /* Contact Details & Footer */
         footer { background: var(--dark); color: #f1f5f9; padding: 60px 20px 20px; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .footer-col h4 { color: var(--secondary); font-size: 1.2rem; margin-bottom: 20px; }
         .footer-col p, .footer-col a { color: #94a3b8; text-decoration: none; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
         .footer-col a:hover { color: white; }
@@ -227,8 +181,6 @@
 
         @media (max-width: 768px) {
             .hero h2 { font-size: 1.8rem; }
-            nav { justify-content: center; text-align: center; }
-            .nav-actions { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -236,14 +188,13 @@
 
     <div class="top-bar">
         <div>
+            <!-- गूगल मैप लिंक -->
             <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="address-link">
                 <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
             </a>
         </div>
-        <div class="social-mini">
+        <div>
             <a href="tel:+919199213137"><i class="fa-solid fa-phone"></i> +91 9199213137</a>
-            <a href="https://wa.me/919199213137" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat</a>
-            <a href="https://t.me/digisolutionskne" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
         </div>
     </div>
 
@@ -255,32 +206,14 @@
                 <p>One Stop Digital Services</p>
             </div>
         </div>
-        <div class="nav-actions">
-            <a href="https://wa.me/919199213137?text=नमस्ते%20DigiSolutions,%20मुझे%20ऑनलाइन%20सर्विस%20के%20बारे%20में%20जानकारी%20चाहिए।" target="_blank" class="btn btn-success" style="padding: 8px 16px; font-size: 0.85rem;">
-                <i class="fa-brands fa-whatsapp"></i> व्हाट्सएप चैट
-            </a>
-            <a href="https://t.me/digisolutionskne" target="_blank" class="btn btn-telegram" style="padding: 8px 16px; font-size: 0.85rem;">
-                <i class="fa-brands fa-telegram"></i> टेलीग्राम चैनल
-            </a>
-        </div>
     </nav>
 
     <header class="hero">
         <h2>🏪 DigiSolutions Online Services</h2>
         <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, बैंकिंग लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
-        
         <div class="btn-group">
             <a href="tel:+919199213137" class="btn btn-primary"><i class="fa-solid fa-phone"></i> अभी कॉल करें</a>
-            <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="btn btn-maps"><i class="fa-solid fa-map-location-dot"></i> हमें Google पर देखें</a>
-        </div>
-
-        <div class="channel-badges">
-            <a href="https://whatsapp.com/channel/0029VagMfnXGJP8K2jhRBk07" target="_blank" class="channel-link">
-                <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.1rem;"></i> व्हाट्सएप चैनल से जुड़ें
-            </a>
-            <a href="https://t.me/digisolutionskne" target="_blank" class="channel-link">
-                <i class="fa-brands fa-telegram" style="color: #37aee2; font-size: 1.1rem;"></i> टेलीग्राम चैनल ज्वाइन करें
-            </a>
+            <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="btn btn-primary" style="background-color: #007bff;"><i class="fa-solid fa-map-location-dot"></i> हमें Google पर देखें (Visit Now)</a>
         </div>
     </header>
 
@@ -316,7 +249,7 @@
                 <h4>Visit Now (अभी विजिट करें)</h4>
                 <p><i class="fa-solid fa-shop"></i> DigiSolutions Online Services</p>
                 <p>
-                    <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" style="display:inline; color: #94a3b8; padding:0; margin:0;">
+                    <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" style="display:inline; color: #94a3b8;">
                         <i class="fa-solid fa-location-dot"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
                     </a>
                 </p>
@@ -325,13 +258,6 @@
                 <h4>संपर्क करें</h4>
                 <p><i class="fa-solid fa-phone"></i> <a href="tel:+919199213137">(+91) 9199213137</a></p>
                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:digisolutionskne@gmail.com">digisolutionskne@gmail.com</a></p>
-                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/919199213137" target="_blank">लाइव व्हाट्सएप चैट</a></p>
-            </div>
-            <div class="footer-col">
-                <h4>हमारे ऑफिशियल चैनल्स</h4>
-                <p>रोजाना नई सरकारी नौकरी, रिजल्ट, और योजनाओं के अपडेट सीधे अपने फोन पर पाने के लिए आज ही जुड़ें:</p>
-                <p><i class="fa-brands fa-whatsapp" style="color: var(--success);"></i> <a href="https://whatsapp.com/channel/0029VagMfnXGJP8K2jhRBk07" target="_blank" style="font-weight: bold; color: #fff;">WhatsApp Channel</a></p>
-                <p><i class="fa-brands fa-telegram" style="color: #37aee2;"></i> <a href="https://t.me/digisolutionskne" target="_blank" style="font-weight: bold; color: #fff;">Telegram Channel</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -353,7 +279,7 @@
             { title: "ट्रेवल टिकट बुकिंग", icon: "fa-plane-departure", desc: "आईआरसीटीसी (IRCTC) द्वारा कंफर्म ट्रेन टिकट, फ्लाइट टिकट और लंबी दूरी की बस बुकिंग।", doc: "यात्री का नाम व आईडी" },
             { title: "बिजली एवं अन्य बिल भुगतान", icon: "fa-receipt", desc: "बिजली बिल, डीटीएच रिचार्ज, मोबाइल बिल एवं अन्य सभी यूटिलिटी भुगतानों की रसीद प्राप्त करें।", doc: "कंज्यूमर नंबर" },
             { title: "ONLINE FORMS & RESULTS", icon: "fa-graduation-cap", desc: "सभी सरकारी नौकरियों (SSC, Railway, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट" },
-            { title: "फोटो, प्रिंट और लैमिनेशन", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलर फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
+            { title: "फोटो, प्रिंट और लैमिनेशन", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज Color फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
         ];
 
         const servicesGrid = document.getElementById('servicesGrid');
