@@ -38,7 +38,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .logo-row {
@@ -57,11 +57,12 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        /* Title और Tagline को सेंटर में रखने के लिए कॉलम लेआउट */
         .logo-text-wrapper {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
+            align-items: center; /* बिल्कुल बीच में करने के लिए */
+            text-align: center;   /* टेक्स्ट सेंटर अलाइनमेंट के लिए */
         }
 
         .logo-text-wrapper h1 {
@@ -86,13 +87,15 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* टैगलाइन को नाम के नीचे बिल्कुल सेंटर में सेट किया गया */
         .tagline { 
             font-size: 1.05rem; 
             color: #64748b; 
             font-weight: 600;
             letter-spacing: 1px;
-            margin-top: 5px;
+            margin-top: 8px;
             text-transform: uppercase;
+            width: 100%;
         }
 
         /* --- Info and Social Bar (Below Logo) --- */
@@ -402,7 +405,7 @@
             { title: "पासपोर्ट सेवाएं", link: "https://www.passportindia.gov.in/psp", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
             { title: "पेंशन सेवाएं (बिहार)", link: "https://www.sspmis.bihar.gov.in/HomePage", icon: "fa-hand-holding-hand", desc: "मुख्यमंत्री वृद्धजन पेंशन, विधवा एवं दिव्यांग पेंशन योजना का नया ऑनलाइन आवेदन।", doc: "आधार, बैंक पासबुक, आयु प्रमाण" },
             { title: "ई-लाभार्थी सेवाएं (बिहार)", link: "https://elabharthi.bihar.gov.in/", icon: "fa-wallet", desc: "पेंशन भुगतान की स्थिति, जीवन प्रमाण पत्र (KYC) वेरिफिकेशन ट्रैकिंग स्टेटस।", doc: "आधार नंबर / लाभार्थी आईडी" },
-            { title: "EPFO सेवाएं", link: "https://www.epfindia.gov.in/site_en/", icon: "fa-building-columns", desc: "PF बैलेंस चेक, एडवांस निकासी, ऑनलाइन क्लेम और UAN एक्टिवेशन की सुविधा।", doc: "UAN नंबर, मोबाइल लिंक" },
+            { title: "EPFO सेवाएं", link: "https://www.epfindia.gov.in/site_en/", icon: "fa-building-columns", desc: "PF बैलेंस चेक, एडवांस निकासी, ऑनलाइन क्लेम और UAN एक्टिवेशन की सुविधा।", doc: "UAN नंबर, mobile लिंक" },
             { title: "सहयोग RTMS पोर्टल, बिहार", link: "https://sahyog.bihar.gov.in/Sahyog/Default.aspx", icon: "fa-handshake-angle", desc: "विभिन्न सरकारी कल्याणकारी योजनाओं, सहायता शिविरों और प्रशासनिक राहत लाभों को प्राप्त करने हेतु आवेदन।", doc: "योग्यता प्रमाण पत्र, फोटो" },
             { title: "RTI ऑनलाइन", link: "https://rtionline.gov.in/", icon: "fa-scale-balanced", desc: "सूचना का अधिकार (RTI) के तहत केंद्र सरकार के किसी भी विभाग से ऑनलाइन जानकारी मांगने की सुविधा।", doc: "पहचान पत्र, आवेदन विवरण" },
             { title: "RTI बिहार (जानकारी)", link: "https://jaankari.bihar.gov.in/", icon: "fa-circle-info", desc: "बिहार सरकार के विभागों से सूचना का अधिकार के तहत जानकारी प्राप्त करने का स्टेट पोर्टल।", doc: "आवेदन प्रारूप, पहचान पत्र" },
@@ -410,7 +413,7 @@
             { title: "मुख्यमंत्री जनता दरबार, बिहार", link: "https://jkdmm.bihar.gov.in/Jantadarbar/ComplainRegistration.aspx", icon: "fa-users-line", desc: "माननीय मुख्यमंत्री के जनता दरबार कार्यक्रम में अपनी समस्याओं को रखने के लिए ऑनलाइन स्लॉट पंजीकरण।", doc: "पहचान पत्र, पूर्व आवेदन प्रति" },
             { title: "PMO Public Grievance (CPGRAMS)", link: "https://pgportal.gov.in/", icon: "fa-shield-halved", desc: "प्रधानमंत्री कार्यालय (PMO) पोर्टल पर केंद्र सरकार से संबंधित शिकायतों का ऑनलाइन पंजीकरण।", doc: "सपोर्टिंग डॉक्यूमेंट, मोबाइल नंबर" },
             { title: "IGNOU सेवाएं", link: "https://www.ignou.ac.in/", icon: "fa-graduation-cap", desc: "इग्नू यूनिवर्सिटी न्यू एडमिशन, री-रजिस्ट्रेशन, असाइनमेंट डाउनलोड और रिजल्ट पोर्टल।", doc: "शैक्षणिक दस्तावेज" },
-            { title: "BSEB OFSS नामांकन पोर्टल", link: "https://ofssbihar.net/Higher-Education/index.html", icon: "fa-school", desc: "बिहार विद्यालय परीक्षा समिति द्वारा इंटर (11वीं) और स्नातक नामांकन हेतु ऑनलाइन आवेदन।", doc: "मैट्रिक/इंटर मार्कशीट" },
+            { title: "BSEB OFSS नामांकन पोर्टल", link: "https://ofssbihar.net/Higher-Education/index.html", icon: "fa-school", desc: "बिहार विद्यालय परीक्षा समिति द्वारा इंटर (11वीं) नामांकन हेतु ऑनलाइन आवेदन।", doc: "मैट्रिक/इंटर मार्कशीट" },
             { title: "पूर्णिया विश्वविद्यालय सेवाएं", link: "https://purneau.ac.in/", icon: "fa-book-open", desc: "पूर्णिया यूनिवर्सिटी के परीक्षा फॉर्म, रजिस्ट्रेशन, एडमिशन और कॉलेज सम्बंधित डिजिटल अपडेट।", doc: "रजिस्ट्रेशन नंबर, रोल नंबर" },
             { title: "नेशनल स्कॉलरशिप पोर्टल (NSP)", link: "https://scholarships.gov.in/", icon: "fa-award", desc: "विभिन्न केंद्रीय और राज्य स्तरीय प्री-मैट्रिक एवं पोस्ट-मैट्रिक स्कॉलरशिप के लिए नया आवेदन।", doc: "बोनाफाइड, आय, जाति, मार्कशीट" },
             { title: "मेधासॉफ्ट छात्रवृति पोर्टल, बिहार", link: "https://medhasoft.bihar.gov.in/", icon: "fa-laptop-code", desc: "बिहार सरकार द्वारा कक्षा 1 से 12वीं तक के छात्रों के लिए पोशाक, साइकिल और छात्रवृत्ति ट्रैकिंग।", doc: "बैंक खाता, दाखिला संख्या" },
@@ -435,7 +438,6 @@
                 const card = document.createElement('a');
                 card.className = 'service-card';
                 card.href = service.link;
-                // जिन सेवाओं के लिंक उपलब्ध नहीं हैं, वे हैश (#) के बजाय डिफ़ॉल्ट एक्शन पर रहेंगी
                 if(service.link !== "#") {
                     card.target = "_blank";
                 }
