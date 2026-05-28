@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiSolutions Online Services - Kishanganj</title>
-    <!-- Font Awesome Icons & Brands -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -238,13 +237,15 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
             border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
             transition: all 0.3s;
         }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-top-color: var(--secondary); }
         .service-card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; display: block; }
         .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        .service-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; }
-        .doc-tag { font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+        .service-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; flex-grow: 1; }
+        .doc-tag { font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; }
 
         /* Info Banner */
         .info-strip {
@@ -283,7 +284,6 @@
                 <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
             </a>
         </div>
-        <!-- Top Bar Chat Links (Telegram Chat Link) -->
         <div class="top-chat-links">
             <a href="https://wa.me/919199213137" target="_blank" title="WhatsApp Chat" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="https://t.me/digisolutionsonlineservices" target="_blank" title="Telegram Chat" style="color: #0088cc;"><i class="fa-brands fa-telegram"></i></a>
@@ -294,7 +294,6 @@
         <div class="logo-container">
             <div class="logo-row">
                 <img src="logo.jpg" id="customLogo" alt="DigiSolutions Logo" class="shop-logo">
-                <!-- Tagline added exactly inside the text wrapper under DigiSolutions -->
                 <div class="logo-text-wrapper">
                     <h1><span class="logo-digi">Digi</span><span class="logo-solutions">Solutions</span></h1>
                     <div class="tagline">One Stop Digital Services</div>
@@ -311,7 +310,6 @@
         </div>
     </header>
 
-    <!-- Channels Section (Telegram Channel Link) -->
     <div class="updates-container">
         <div class="channel-box">
             <div style="display: flex; align-items: center; gap: 10px;">
@@ -343,7 +341,7 @@
 
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Ticket...">
+                <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Ticket, RTI, Grievance...">
             </div>
 
             <div class="services-grid" id="servicesGrid"></div>
@@ -385,8 +383,13 @@
             { title: "पासपोर्ट आवेदन", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
             { title: "वोटर आईडी कार्ड", icon: "fa-check-to-slot", desc: "नया वोटर कार्ड बनाना, वोटर लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
             { title: "AEPS (अंगूठे से पैसे निकालना)", icon: "fa-money-bill-transfer", desc: "आधार इनेबल्ड पेमेंट सिस्टम (AEPS) के माध्यम से किसी भी बैंक से अंगूठा लगाकर सुरक्षित पैसे की निकासी और बैलेंस चेक।", doc: "बैंक खाता / आधार लिंक" },
-            { title: "आयुष्मान भारत / E-Shram", icon: "fa-heart-pulse", desc: "5 लाख तक मुफ्त इलाज वाला आयुष्मान कार्ड और श्रमिकों के लिए ई-श्रम कार्ड का पंजीकरण।", doc: "राशन कार्ड, आधार" },
+            { title: "आयुष्मान भारत / ई-श्रम", icon: "fa-heart-pulse", desc: "5 लाख तक मुफ्त इलाज वाला आयुष्मान कार्ड और श्रमिकों के लिए ई-श्रम कार्ड का पंजीकरण।", doc: "राशन कार्ड, आधार" },
             { title: "जमीन संबंधित सेवाएं", icon: "fa-map-location-dot", desc: "ऑनलाइन जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, म्युटेशन आवेदन, जमाबंदी और खतियान देखना, जन-शिकायत आवेदन।", doc: "खाता/खेसरा नंबर" },
+            { title: "ऑनलाइन आर टी आई आवेदन", icon: "fa-scale-balanced", desc: "सूचना का अधिकार (RTI) के तहत केंद्र या बिहार सरकार के किसी भी विभाग से ऑनलाइन जानकारी मांगने और प्रथम अपील दर्ज करने की सुविधा।", doc: "पहचान पत्र, आवेदन विवरण" },
+            { title: "लोकशिकायत निवारण आवेदन", icon: "fa-bullhorn", desc: "बिहार लोक शिकायत निवारण अधिकार अधिनियम के अंतर्गत किसी भी सरकारी कार्य या विभाग की शिकायत दर्ज करें और सुनवाई की ट्रैकिंग पाएं।", doc: "शिकायत का विवरण, दस्तावेज" },
+            { title: "मुख्यमंत्री जनता दरबार आवेदन", icon: "fa-users-line", desc: "माननीय मुख्यमंत्री के जनता दरबार कार्यक्रम में अपनी समस्याओं को सीधे रखने के लिए ऑनलाइन स्लॉट बुकिंग और पंजीकरण।", doc: "पहचान पत्र, पूर्व आवेदन प्रति" },
+            { title: "पीएमओ पब्लिक ग्रीवांस आवेदन", icon: "fa-building-columns", desc: "प्रधानमंत्री कार्यालय (PMO) के CPGRAMS पोर्टल पर केंद्र सरकार से संबंधित शिकायतों और समस्याओं का ऑनलाइन पंजीकरण।", doc: "सपोर्टिंग डॉक्यूमेंट, मोबाइल नंबर" },
+            { title: "सहयोग शिविर आवेदन", icon: "fa-handshake-angle", desc: "विभिन्न सरकारी कल्याणकारी योजनाओं, सहायता शिविरों और प्रशासनिक राहत लाभों को प्राप्त करने हेतु ऑनलाइन आवेदन।", doc: "योग्यता प्रमाण पत्र, फोटो" },
             { title: "ट्रेवल टिकट बुकिंग", icon: "fa-plane-departure", desc: "ट्रेन टिकट, फ्लाइट टिकट और बस बुकिंग।", doc: "यात्री का नाम व आईडी" },
             { title: "बिजली एवं अन्य बिल भुगतान", icon: "fa-receipt", desc: "बिजली बिल, डीटीएच रिचार्ज, मोबाइल बिल एवं अन्य सभी यूटिलिटी भुगतानों की रसीद प्राप्त करें।", doc: "कंज्यूमर नंबर" },
             { title: "ऑनलाइन फॉर्म्स & रिजल्ट्स", icon: "fa-graduation-cap", desc: "सभी सरकारी नौकरियों (SSC, Railway, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट" },
