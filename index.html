@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiSolutions Online Services - Kishanganj</title>
+    <!-- Font Awesome Icons & Brands -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -35,20 +36,35 @@
             font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
             gap: 10px;
         }
         .top-bar a { color: #cbd5e1; text-decoration: none; }
         .top-bar .address-link { color: white; text-decoration: none; display: flex; align-items: center; gap: 5px; }
         .top-bar .address-link:hover { color: var(--secondary); }
+        
+        /* Top Bar Chat Icons */
+        .top-chat-links {
+            display: flex;
+            gap: 18px;
+            font-size: 1.3rem;
+            align-items: center;
+        }
+        .top-chat-links a {
+            transition: transform 0.2s;
+        }
+        .top-chat-links a:hover {
+            transform: scale(1.2);
+        }
 
-        /* Navigation / Header */
+        /* Navigation / Header - Centered & Larger */
         nav {
             background: white;
-            padding: 15px 20px;
+            padding: 20px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             position: sticky;
             top: 0;
@@ -57,13 +73,21 @@
 
         .logo-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 15px;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .logo-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
 
         .shop-logo {
-            width: 55px;
-            height: 55px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #76B82A;
@@ -71,9 +95,9 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Image-like Styled Text Logo */
+        /* Image-like Styled Text Logo (Larger) */
         .logo-text-wrapper h1 {
-            font-size: 2.2rem;
+            font-size: 2.6rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             line-height: 1.1;
@@ -94,12 +118,13 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .logo-text-wrapper p { 
-            font-size: 0.85rem; 
-            color: #76B82A; 
+        .tagline { 
+            font-size: 1rem; 
+            color: #64748b; 
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             margin-top: 2px;
+            text-transform: uppercase;
         }
 
         /* मुख्य बैनर (Hero Section) */
@@ -133,37 +158,11 @@
         .btn-primary { background: var(--secondary); color: white; }
         .btn-primary:hover { background: #e07216; transform: translateY(-2px); }
 
-        /* Notification & Channels Section */
+        /* Channels Section */
         .updates-container {
             max-width: 1200px;
             margin: 30px auto 0;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .notification-box {
-            background: white;
-            padding: 12px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-left: 5px solid var(--secondary);
-            overflow: hidden;
-        }
-
-        .notification-label {
-            background: var(--secondary);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            animation: pulse 2s infinite;
         }
 
         .channel-box {
@@ -260,16 +259,11 @@
         .footer-col a:hover { color: white; }
         .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #334155; color: #64748b; font-size: 0.9rem; }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
         @media (max-width: 768px) {
             .hero h2 { font-size: 1.8rem; }
-            .logo-text-wrapper h1 { font-size: 1.8rem; }
+            .logo-text-wrapper h1 { font-size: 2.1rem; }
             .channel-box { flex-direction: column; text-align: center; }
+            .top-bar { justify-content: center; }
         }
     </style>
 </head>
@@ -281,38 +275,36 @@
                 <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
             </a>
         </div>
-        <div>
-            <a href="tel:+919199213137"><i class="fa-solid fa-phone"></i> +91 9199213137</a>
+        <!-- WhatsApp and Telegram Only Icons Chat Links -->
+        <div class="top-chat-links">
+            <a href="https://wa.me/919199213137" target="_blank" title="WhatsApp Chat" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://t.me/digisolutionskne" target="_blank" title="Telegram Chat" style="color: #0088cc;"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
 
     <nav>
+        <!-- Centered Logo and Text Layout according to Screenshot_20260528-150632~2.jpg -->
         <div class="logo-container">
-            <img src="logo.jpg" id="customLogo" alt="DigiSolutions Logo" class="shop-logo">
-            <div class="logo-text-wrapper">
-                <h1><span class="logo-digi">Digi</span><span class="logo-solutions">Solutions</span></h1>
-                <p>One Stop Digital Services</p>
+            <div class="logo-row">
+                <img src="logo.jpg" id="customLogo" alt="DigiSolutions Logo" class="shop-logo">
+                <div class="logo-text-wrapper">
+                    <h1><span class="logo-digi">Digi</span><span class="logo-solutions">Solutions</span></h1>
+                </div>
             </div>
+            <div class="tagline">One Stop Digital Services</div>
         </div>
     </nav>
 
     <header class="hero">
         <h2>🏪 DigiSolutions Online Services</h2>
-        <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, बैंकिंग लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
+        <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, banking लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
         <div class="btn-group">
-            <a href="tel:+919199213137" class="btn btn-primary"><i class="fa-solid fa-phone"></i> अभी कॉल करें</a>
             <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="btn btn-primary" style="background-color: #007bff;"><i class="fa-solid fa-map-location-dot"></i> हमें Google पर देखें (Visit Now)</a>
         </div>
     </header>
 
+    <!-- Official Social Media Channels Links (Single Unified Location) -->
     <div class="updates-container">
-        <div class="notification-box">
-            <span class="notification-label"><i class="fa-solid fa-bullhorn"></i> नया अपडेट</span>
-            <marquee font-weight="500" scrollamount="4" onmouseover="this.stop();" onmouseout="this.start();" style="color: var(--dark); cursor: pointer;">
-                🔥 बिहार राशन कार्ड और LPC आवेदन शुरू! | 📌 आयुष्मान भारत योजना के तहत ₹5 लाख तक का मुफ़्त इलाज कार्ड यहाँ बनवाएं। | 💼 नई सरकारी नौकरियों (SSC, Railway, Banking) के ऑनलाइन फॉर्म भरने की सुविधा उपलब्ध है।
-            </marquee>
-        </div>
-
         <div class="channel-box">
             <div style="display: flex; align-items: center; gap: 10px;">
                 <i class="fa-solid fa-circle-nodes" style="color: var(--primary); font-size: 1.3rem;"></i>
