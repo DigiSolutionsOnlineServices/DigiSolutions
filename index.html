@@ -27,53 +27,18 @@
             line-height: 1.6;
         }
 
-        /* Top Bar */
-        .top-bar {
-            background: var(--dark);
-            color: white;
-            padding: 8px 20px;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .top-bar a { color: #cbd5e1; text-decoration: none; }
-        .top-bar .address-link { color: white; text-decoration: none; display: flex; align-items: center; gap: 5px; }
-        .top-bar .address-link:hover { color: var(--secondary); }
-        
-        /* Top Bar Chat Icons */
-        .top-chat-links {
-            display: flex;
-            gap: 18px;
-            font-size: 1.3rem;
-            align-items: center;
-        }
-        .top-chat-links a {
-            transition: transform 0.2s;
-        }
-        .top-chat-links a:hover {
-            transform: scale(1.2);
-        }
-
-        /* Navigation / Header - Centered & Layout Modified */
-        nav {
+        /* --- Header & Logo Section --- */
+        header.main-header {
             background: white;
-            padding: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 25px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
         .logo-container {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 20px;
         }
 
         .logo-row {
@@ -83,16 +48,15 @@
         }
 
         .shop-logo {
-            width: 75px;
-            height: 75px;
+            width: 85px;
+            height: 85px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #76B82A;
+            border: 3px solid #76B82A;
             background: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Wrapper for Text and Tagline to keep them together */
         .logo-text-wrapper {
             display: flex;
             flex-direction: column;
@@ -100,9 +64,8 @@
             text-align: left;
         }
 
-        /* Enlarged DigiSolutions Title */
         .logo-text-wrapper h1 {
-            font-size: 3.5rem; /* आकार बड़ा किया गया */
+            font-size: 3.5rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             line-height: 1;
@@ -123,7 +86,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Tagline repositioned directly under text */
         .tagline { 
             font-size: 1.05rem; 
             color: #64748b; 
@@ -133,24 +95,56 @@
             text-transform: uppercase;
         }
 
-        /* मुख्य बैनर (Hero Section) */
+        /* --- Info and Social Bar (Below Logo) --- */
+        .info-bar {
+            background: var(--dark);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .info-bar a { color: #cbd5e1; text-decoration: none; }
+        .info-bar .address-link { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+        .info-bar .address-link:hover { color: var(--secondary); }
+        
+        .top-chat-links {
+            display: flex;
+            gap: 20px;
+            font-size: 1.4rem;
+            align-items: center;
+        }
+        .top-chat-links a {
+            transition: transform 0.2s;
+        }
+        .top-chat-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* --- Hero Welcome Banner --- */
         .hero {
-            background: linear-gradient(rgba(15, 76, 129, 0.85), rgba(30, 41, 59, 0.95)), 
+            background: linear-gradient(rgba(15, 76, 129, 0.88), rgba(30, 41, 59, 0.95)), 
                         url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 20px;
+            padding: 50px 20px;
             text-align: center;
+            margin-top: 25px;
         }
 
-        .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+        .hero h2 { font-size: 2.2rem; margin-bottom: 12px; }
+        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 20px; opacity: 0.9; }
 
-        /* Buttons */
-        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn {
-            padding: 12px 28px;
+            padding: 10px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -160,11 +154,12 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            background-color: #007bff;
+            color: white;
         }
-        .btn-primary { background: var(--secondary); color: white; }
-        .btn-primary:hover { background: #e07216; transform: translateY(-2px); }
+        .btn:hover { background: #0056b3; transform: translateY(-2px); }
 
-        /* Channels Section */
+        /* --- Channels Section --- */
         .updates-container {
             max-width: 1200px;
             margin: 30px auto 0;
@@ -201,10 +196,21 @@
         .btn-telegram { background: #0088cc; }
         .btn-telegram:hover { background: #0077b5; transform: translateY(-2px); }
 
-        /* Main Content Container */
+        /* --- Main Content Container --- */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 
-        /* Live Search & Filter Grid */
+        .info-strip {
+            background: #fff3e0;
+            border: 1px solid #ffe0b2;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #e65100;
+            margin-bottom: 40px;
+        }
+
+        /* --- Live Search & Filter Grid --- */
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--primary); font-size: 2rem; position: relative; padding-bottom: 10px;}
         .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
@@ -225,6 +231,7 @@
         .search-box input:focus { border-color: var(--primary); }
         .search-box i { position: absolute; left: 18px; top: 18px; color: #94a3b8; }
 
+        /* --- Clickable Services Grid --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -240,26 +247,21 @@
             display: flex;
             flex-direction: column;
             transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
         }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-top-color: var(--secondary); }
+        .service-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+            border-top-color: var(--secondary); 
+        }
         .service-card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; display: block; }
-        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--dark); }
         .service-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; flex-grow: 1; }
         .doc-tag { font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; }
 
-        /* Info Banner */
-        .info-strip {
-            background: #fff3e0;
-            border: 1px solid #ffe0b2;
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: bold;
-            color: #e65100;
-            margin-bottom: 40px;
-        }
-
-        /* Footer */
+        /* --- Footer --- */
         footer { background: var(--dark); color: #f1f5f9; padding: 60px 20px 20px; }
         .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .footer-col h4 { color: var(--secondary); font-size: 1.2rem; margin-bottom: 20px; }
@@ -271,26 +273,17 @@
             .hero h2 { font-size: 1.8rem; }
             .logo-text-wrapper h1 { font-size: 2.3rem; }
             .tagline { font-size: 0.85rem; }
-            .channel-box { flex-direction: column; text-align: center; }
-            .top-bar { justify-content: center; }
+            .channel-box, .info-bar { flex-direction: column; text-align: center; border-radius: 15px; }
+            .info-bar .address-link { justify-content: center; text-align: center; }
+            .logo-row { flex-direction: column; text-align: center; }
+            .logo-text-wrapper { align-items: center; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <div>
-            <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="address-link">
-                <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
-            </a>
-        </div>
-        <div class="top-chat-links">
-            <a href="https://wa.me/919199213137" target="_blank" title="WhatsApp Chat" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://t.me/digisolutionsonlineservices" target="_blank" title="Telegram Chat" style="color: #0088cc;"><i class="fa-brands fa-telegram"></i></a>
-        </div>
-    </div>
-
-    <nav>
+    <!-- Top Header: Logo, Title and Tagline -->
+    <header class="main-header">
         <div class="logo-container">
             <div class="logo-row">
                 <img src="logo.jpg" id="customLogo" alt="DigiSolutions Logo" class="shop-logo">
@@ -300,16 +293,31 @@
                 </div>
             </div>
         </div>
-    </nav>
 
-    <header class="hero">
-        <h2>🏪 DigiSolutions Online Services</h2>
-        <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, बैंकिंग लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
-        <div class="btn-group">
-            <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="btn btn-primary" style="background-color: #007bff;"><i class="fa-solid fa-map-location-dot"></i> हमें Google पर देखें (Visit Now)</a>
+        <!-- Address and Social Icons under the logo section -->
+        <div class="info-bar">
+            <div>
+                <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="address-link">
+                    <i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i> Dhobiniya, Ward No. 11, Near Middle School Dhobiniya, KTTG Road, Kishanganj, Bihar - 855107
+                </a>
+            </div>
+            <div class="top-chat-links">
+                <a href="https://wa.me/919199213137" target="_blank" title="WhatsApp Chat" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://t.me/digisolutionsonlineservices" target="_blank" title="Telegram Chat" style="color: #0088cc;"><i class="fa-brands fa-telegram"></i></a>
+            </div>
         </div>
     </header>
 
+    <!-- Hero Welcome Section -->
+    <div class="hero">
+        <h2>🏪 DigiSolutions Online Services</h2>
+        <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, बैंकिंग लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
+        <div>
+            <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> हमें Google पर देखें (Visit Now)</a>
+        </div>
+    </div>
+
+    <!-- Official Channels Section -->
     <div class="updates-container">
         <div class="channel-box">
             <div style="display: flex; align-items: center; gap: 10px;">
@@ -327,6 +335,7 @@
         </div>
     </div>
 
+    <!-- Services Grid and Search Section -->
     <div class="container">
         
         <div class="info-strip">
@@ -336,24 +345,26 @@
         <section>
             <div class="section-title">
                 <h2>हमारी डिजिटल सेवाएं</h2>
-                <p style="color: #64748b; margin-top: 10px;">अपनी आवश्यक सर्विस को नीचे तुरंत खोजें (Search करें)</p>
+                <p style="color: #64748b; margin-top: 10px;">अपनी आवश्यक सर्विस को नीचे तुरंत खोजें (Search करें) और सीधे लिंक पर जाने के लिए क्लिक करें</p>
             </div>
 
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Ticket, RTI, Grievance...">
+                <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Land, RTI, Pension...">
             </div>
 
+            <!-- Dynamically populated via Javascript with explicit links -->
             <div class="services-grid" id="servicesGrid"></div>
         </section>
 
     </div>
 
+    <!-- Footer Section -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
                 <h4 style="color: white; font-size: 1.4rem;">DigiSolutions</h4>
-                <p style="margin-top: 15px;">आपकी सुविधा, हमारा लक्ष्य। आज ही हमारी साइबर कैफ़े पर पधारें या फोन पर संपर्क करें। हम ग्राहकों को त्वरित और सही सर्विस देने के लिए प्रतिबद्ध हैं।</p>
+                <p style="margin-top: 15px;">आपकी सुविधा, हमारा लक्ष्य। आज ही हमारे साइबर कैफ़े पर पधारें या फोन पर संपर्क करें। हम ग्राहकों को त्वरित और सही सर्विस देने के लिए प्रतिबद्ध हैं।</p>
             </div>
             <div class="footer-col">
                 <h4>Visit Now (अभी विजिट करें)</h4>
@@ -375,25 +386,39 @@
         </div>
     </footer>
 
+    <!-- Service Data and Search Functionality Script -->
     <script>
         const servicesData = [
-            { title: "RTPS सेवाएं", icon: "fa-file-invoice", desc: "जाति, आवासीय, आय प्रमाण पत्र के साथ-साथ अब आचरण प्रमाण पत्र (Character Certificate) का नया आवेदन और डाउनलोड।", doc: "आधार कार्ड, फोटो, शपथ पत्र" },
-            { title: "आधार अपडेट", icon: "fa-address-card", desc: "आधार कार्ड में एड्रेस सुधार संबंधी ऑनलाइन कार्य।", doc: "सहायक दस्तावेज" },
-            { title: "पैन कार्ड", icon: "fa-id-card", desc: "नया पैन कार्ड आवेदन, खोए हुए पैन का सुधार या रीप्रिंट की त्वरित सुविधा।", doc: "आधार कार्ड, फोटो" },
-            { title: "पासपोर्ट आवेदन", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
-            { title: "वोटर आईडी कार्ड", icon: "fa-check-to-slot", desc: "नया वोटर कार्ड बनाना, वोटर लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
-            { title: "AEPS (अंगूठे से पैसे निकालना)", icon: "fa-money-bill-transfer", desc: "आधार इनेबल्ड पेमेंट सिस्टम (AEPS) के माध्यम से किसी भी बैंक से अंगूठा लगाकर सुरक्षित पैसे की निकासी और बैलेंस चेक।", doc: "बैंक खाता / आधार लिंक" },
-            { title: "आयुष्मान भारत / ई-श्रम", icon: "fa-heart-pulse", desc: "5 लाख तक मुफ्त इलाज वाला आयुष्मान कार्ड और श्रमिकों के लिए ई-श्रम कार्ड का पंजीकरण।", doc: "राशन कार्ड, आधार" },
-            { title: "जमीन संबंधित सेवाएं", icon: "fa-map-location-dot", desc: "ऑनलाइन जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, म्युटेशन आवेदन, जमाबंदी और खतियान देखना, जन-शिकायत आवेदन।", doc: "खाता/खेसरा नंबर" },
-            { title: "ऑनलाइन आर टी आई आवेदन", icon: "fa-scale-balanced", desc: "सूचना का अधिकार (RTI) के तहत केंद्र या बिहार सरकार के किसी भी विभाग से ऑनलाइन जानकारी मांगने और प्रथम अपील दर्ज करने की सुविधा।", doc: "पहचान पत्र, आवेदन विवरण" },
-            { title: "लोकशिकायत निवारण आवेदन", icon: "fa-bullhorn", desc: "बिहार लोक शिकायत निवारण अधिकार अधिनियम के अंतर्गत किसी भी सरकारी कार्य या विभाग की शिकायत दर्ज करें और सुनवाई की ट्रैकिंग पाएं।", doc: "शिकायत का विवरण, दस्तावेज" },
-            { title: "मुख्यमंत्री जनता दरबार आवेदन", icon: "fa-users-line", desc: "माननीय मुख्यमंत्री के जनता दरबार कार्यक्रम में अपनी समस्याओं को सीधे रखने के लिए ऑनलाइन स्लॉट बुकिंग और पंजीकरण।", doc: "पहचान पत्र, पूर्व आवेदन प्रति" },
-            { title: "पीएमओ पब्लिक ग्रीवांस आवेदन", icon: "fa-building-columns", desc: "प्रधानमंत्री कार्यालय (PMO) के CPGRAMS पोर्टल पर केंद्र सरकार से संबंधित शिकायतों और समस्याओं का ऑनलाइन पंजीकरण।", doc: "सपोर्टिंग डॉक्यूमेंट, मोबाइल नंबर" },
-            { title: "सहयोग शिविर आवेदन", icon: "fa-handshake-angle", desc: "विभिन्न सरकारी कल्याणकारी योजनाओं, सहायता शिविरों और प्रशासनिक राहत लाभों को प्राप्त करने हेतु ऑनलाइन आवेदन।", doc: "योग्यता प्रमाण पत्र, फोटो" },
-            { title: "ट्रेवल टिकट बुकिंग", icon: "fa-plane-departure", desc: "ट्रेन टिकट, फ्लाइट टिकट और बस बुकिंग।", doc: "यात्री का नाम व आईडी" },
-            { title: "बिजली एवं अन्य बिल भुगतान", icon: "fa-receipt", desc: "बिजली बिल, डीटीएच रिचार्ज, मोबाइल बिल एवं अन्य सभी यूटिलिटी भुगतानों की रसीद प्राप्त करें।", doc: "कंज्यूमर नंबर" },
-            { title: "ऑनलाइन फॉर्म्स & रिजल्ट्स", icon: "fa-graduation-cap", desc: "सभी सरकारी नौकरियों (SSC, Railway, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट" },
-            { title: "फोटो, प्रिंट और लैमिनेशन", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलर फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
+            { title: "RTPS सेवाएं", link: "https://serviceonline.bihar.gov.in/", icon: "fa-file-invoice", desc: "जाति, आवासीय, आय प्रमाण पत्र के साथ-साथ अब आचरण प्रमाण पत्र (Character Certificate) का नया आवेदन और डाउनलोड।", doc: "आधार कार्ड, फोटो, शपथ पत्र" },
+            { title: "पैन कार्ड सेवाएं", link: "https://onlineservices.proteantech.in/paam/endUserRegisterContact.html", icon: "fa-id-card", desc: "नया पैन कार्ड आवेदन, खोए हुए पैन का सुधार या रीप्रिंट की त्वरित सुविधा।", doc: "आधार कार्ड, फोटो" },
+            { title: "आधार अपडेट सेवाएं", link: "https://uidai.gov.in/en/", icon: "fa-address-card", desc: "आधार कार्ड में एड्रेस सुधार, स्टेटस जांच संबंधी ऑनलाइन कार्य की आधिकारिक जानकारी।", doc: "सहायक दस्तावेज" },
+            { title: "वोटर आईडी कार्ड सेवाएं", link: "https://voters.eci.gov.in/login", icon: "fa-check-to-slot", desc: "नया वोटर कार्ड बनाना, वोटर लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
+            { title: "बिहार-भूमि सेवाएं", link: "https://biharbhumi.bihar.gov.in/Biharbhumi/", icon: "fa-map-location-dot", desc: "ऑनलाइन जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, म्युटेशन आवेदन और जन-शिकायत।", doc: "खाता/खेसरा/जमाबंदी विवरण" },
+            { title: "भू-अभिलेख बिहार", link: "https://bhuabhilekh.bihar.gov.in/login?ref=aW5kZXgucGhw", icon: "fa-map", desc: "डिजिटल हस्ताक्षरित खतियान, जमाबंदी नक़ल और नक्शा निकालने सम्बन्धी लॉगिन सेवाएं।", doc: "खाता/खेसरा नंबर" },
+            { title: "ई-निबंधन बिहार", link: "https://nibandhan.bihar.gov.in/", icon: "fa-gavel", desc: "जमीन और मकान रजिस्ट्री, अपॉइंटमेंट बुकिंग और मॉडल डीड्स सम्बन्धी निबंधन पोर्टल।", doc: "रजिस्ट्री दस्तावेज" },
+            { title: "ड्राइविंग लाइसेंस सेवाएं", link: "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do", icon: "fa-car", desc: "लर्निंग लाइसेंस, पक्का ड्राइविंग लाइसेंस आवेदन, नवीनीकरण और स्लॉट बुकिंग।", doc: "आधार, आयु एवं एड्रेस प्रूफ" },
+            { title: "आयुष्मान भारत सेवाएं", link: "https://beneficiary.nha.gov.in/", icon: "fa-heart-pulse", desc: "5 लाख रुपये तक मुफ्त इलाज वाला आयुष्मान कार्ड पात्रता जाँच और नया पंजीकरण।", doc: "राशन कार्ड, आधार" },
+            { title: "ई-श्रम सेवाएं", link: "https://eshram.gov.in/indexmain", icon: "fa-users", desc: "असंगठित क्षेत्र के श्रमिकों के लिए ई-श्रम कार्ड का नया पंजीकरण और अपडेट।", doc: "आधार कार्ड, बैंक खाता" },
+            { title: "पासपोर्ट सेवाएं", link: "https://www.passportindia.gov.in/psp", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
+            { title: "पेंशन सेवाएं (बिहार)", link: "https://www.sspmis.bihar.gov.in/HomePage", icon: "fa-hand-holding-hand", desc: "मुख्यमंत्री वृद्धजन पेंशन, विधवा एवं दिव्यांग पेंशन योजना का नया ऑनलाइन आवेदन।", doc: "आधार, बैंक पासबुक, आयु प्रमाण" },
+            { title: "ई-लाभार्थी सेवाएं (बिहार)", link: "https://elabharthi.bihar.gov.in/", icon: "fa-wallet", desc: "पेंशन भुगतान की स्थिति, जीवन प्रमाण पत्र (KYC) वेरिफिकेशन ट्रैकिंग स्टेटस।", doc: "आधार नंबर / लाभार्थी आईडी" },
+            { title: "EPFO सेवाएं", link: "https://www.epfindia.gov.in/site_en/", icon: "fa-building-columns", desc: "PF बैलेंस चेक, एडवांस निकासी, ऑनलाइन क्लेम और UAN एक्टिवेशन की सुविधा।", doc: "UAN नंबर, मोबाइल लिंक" },
+            { title: "सहयोग RTMS पोर्टल, बिहार", link: "https://sahyog.bihar.gov.in/Sahyog/Default.aspx", icon: "fa-handshake-angle", desc: "विभिन्न सरकारी कल्याणकारी योजनाओं, सहायता शिविरों और प्रशासनिक राहत लाभों को प्राप्त करने हेतु आवेदन।", doc: "योग्यता प्रमाण पत्र, फोटो" },
+            { title: "RTI ऑनलाइन", link: "https://rtionline.gov.in/", icon: "fa-scale-balanced", desc: "सूचना का अधिकार (RTI) के तहत केंद्र सरकार के किसी भी विभाग से ऑनलाइन जानकारी मांगने की सुविधा।", doc: "पहचान पत्र, आवेदन विवरण" },
+            { title: "RTI बिहार (जानकारी)", link: "https://jaankari.bihar.gov.in/", icon: "fa-circle-info", desc: "बिहार सरकार के विभागों से सूचना का अधिकार के तहत जानकारी प्राप्त करने का स्टेट पोर्टल।", doc: "आवेदन प्रारूप, पहचान पत्र" },
+            { title: "लोकशिकायत निवारण, बिहार", link: "https://lokshikayat.bihar.gov.in/", icon: "fa-bullhorn", desc: "बिहार लोक शिकायत निवारण अधिकार अधिनियम के अंतर्गत किसी भी सरकारी कार्य की शिकायत दर्ज करें।", doc: "शिकायत का विवरण, दस्तावेज" },
+            { title: "मुख्यमंत्री जनता दरबार, बिहार", link: "https://jkdmm.bihar.gov.in/Jantadarbar/ComplainRegistration.aspx", icon: "fa-users-line", desc: "माननीय मुख्यमंत्री के जनता दरबार कार्यक्रम में अपनी समस्याओं को रखने के लिए ऑनलाइन स्लॉट पंजीकरण।", doc: "पहचान पत्र, पूर्व आवेदन प्रति" },
+            { title: "PMO Public Grievance (CPGRAMS)", link: "https://pgportal.gov.in/", icon: "fa-shield-halved", desc: "प्रधानमंत्री कार्यालय (PMO) पोर्टल पर केंद्र सरकार से संबंधित शिकायतों का ऑनलाइन पंजीकरण।", doc: "सपोर्टिंग डॉक्यूमेंट, मोबाइल नंबर" },
+            { title: "IGNOU सेवाएं", link: "https://www.ignou.ac.in/", icon: "fa-graduation-cap", desc: "इग्नू यूनिवर्सिटी न्यू एडमिशन, री-रजिस्ट्रेशन, असाइनमेंट डाउनलोड और रिजल्ट पोर्टल।", doc: "शैक्षणिक दस्तावेज" },
+            { title: "BSEB OFSS नामांकन पोर्टल", link: "https://ofssbihar.net/Higher-Education/index.html", icon: "fa-school", desc: "बिहार विद्यालय परीक्षा समिति द्वारा इंटर (11वीं) और स्नातक नामांकन हेतु ऑनलाइन आवेदन।", doc: "मैट्रिक/इंटर मार्कशीट" },
+            { title: "पूर्णिया विश्वविद्यालय सेवाएं", link: "https://purneau.ac.in/", icon: "fa-book-open", desc: "पूर्णिया यूनिवर्सिटी के परीक्षा फॉर्म, रजिस्ट्रेशन, एडमिशन और कॉलेज सम्बंधित डिजिटल अपडेट।", doc: "रजिस्ट्रेशन नंबर, रोल नंबर" },
+            { title: "नेशनल स्कॉलरशिप पोर्टल (NSP)", link: "https://scholarships.gov.in/", icon: "fa-award", desc: "विभिन्न केंद्रीय और राज्य स्तरीय प्री-मैट्रिक एवं पोस्ट-मैट्रिक स्कॉलरशिप के लिए नया आवेदन।", doc: "बोनाफाइड, आय, जाति, मार्कशीट" },
+            { title: "मेधासॉफ्ट छात्रवृति पोर्टल, बिहार", link: "https://medhasoft.bihar.gov.in/", icon: "fa-laptop-code", desc: "बिहार सरकार द्वारा कक्षा 1 से 12वीं तक के छात्रों के लिए पोशाक, साइकिल और छात्रवृत्ति ट्रैकिंग।", doc: "बैंक खाता, दाखिला संख्या" },
+            { title: "AEPS Money Transfer", link: "https://www.instantpay.in/login", icon: "fa-money-bill-transfer", desc: "आधार इनेबल्ड पेमेंट सिस्टम (AEPS) के माध्यम से किसी भी बैंक से अंगूठा लगाकर सुरक्षित पैसे की निकासी।", doc: "बैंक खाता / आधार लिंक" },
+            { title: "Travel Tickets Services", link: "https://www.irctc.co.in/", icon: "fa-plane-departure", desc: "रेलवे कंफर्म टिकट बुकिंग, तत्काल टिकट, फ्लाइट और लंबी दूरी की बस बुकिंग की त्वरित सुविधा।", doc: "यात्री का नाम व वैध आईडी" },
+            { title: "Online Forms & Results", link: "#", icon: "fa-file-signature", desc: "सभी सरकारी नौकरियों (SSC, Railway, BPSC, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट, फोटो" },
+            { title: "Bill Payments", link: "#", icon: "fa-receipt", desc: "उत्तर/दक्षिण बिहार बिजली बिल, डीटीएच रिचार्ज, मोबाइल पोस्टपेड बिल एवं अन्य सभी यूटिलिटी भुगतान।", doc: "कंज्यूमर नंबर/अकाउंट नंबर" },
+            { title: "Photo, Printing, Lamination", link: "#", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलर फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी डाक्यूमेंट्स प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
         ];
 
         const servicesGrid = document.getElementById('servicesGrid');
@@ -407,8 +432,14 @@
             }
             
             services.forEach(service => {
-                const card = document.createElement('div');
+                const card = document.createElement('a');
                 card.className = 'service-card';
+                card.href = service.link;
+                // जिन सेवाओं के लिंक उपलब्ध नहीं हैं, वे हैश (#) के बजाय डिफ़ॉल्ट एक्शन पर रहेंगी
+                if(service.link !== "#") {
+                    card.target = "_blank";
+                }
+                
                 card.innerHTML = `
                     <i class="fa-solid ${service.icon}"></i>
                     <h3>${service.title}</h3>
@@ -421,8 +452,10 @@
             });
         }
 
+        // Initialize display
         displayServices(servicesData);
 
+        // Search algorithm
         searchInput.addEventListener('input', (e) => {
             const searchTxt = e.target.value.toLowerCase().trim();
             const filtered = servicesData.filter(service => 
