@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiSolutions Online Services - Kishanganj</title>
+    <!-- Google Fonts for Logo Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -12,6 +16,7 @@
             --dark: #1e293b;
             --light: #f8fafc;
             --success: #22c55e;
+            --telegram: #0088cc;
         }
 
         * {
@@ -48,7 +53,7 @@
             padding: 15px 20px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             position: sticky;
             top: 0;
@@ -71,17 +76,47 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        /* स्पेशल लोगो फॉन्ट और कलर स्टाइलिंग */
         .logo-text-wrapper h1 {
-            font-size: 1.6rem;
-            color: #0f4c81;
-            font-weight: 700;
-            line-height: 1.2;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
         }
         .logo-text-wrapper p { 
             font-size: 0.85rem; 
             color: #5cb85c; 
             font-weight: 600;
             letter-spacing: 0.5px;
+        }
+
+        /* नया लाइव नोटिफिकेशन बार स्टाइल */
+        .notification-container {
+            background: #fff3e0;
+            border-bottom: 1px solid #ffe0b2;
+            padding: 6px 20px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            overflow: hidden;
+        }
+        .notification-title {
+            background: #e65100;
+            color: white;
+            padding: 2px 10px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-right: 15px;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .notification-container marquee {
+            color: #e65100;
+            font-weight: 600;
         }
 
         /* मुख्य बैनर (Hero Section) */
@@ -91,7 +126,7 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
@@ -99,7 +134,7 @@
         .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
 
         /* Buttons */
-        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
         .btn {
             padding: 12px 28px;
             border-radius: 50px;
@@ -114,6 +149,43 @@
         }
         .btn-primary { background: var(--secondary); color: white; }
         .btn-primary:hover { background: #e07216; transform: translateY(-2px); }
+
+        /* स्पेशल सिंगल लोकेशन सोशल चैनल्स बॉक्स */
+        .single-channel-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+        .single-channel-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+        .channel-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn-ch {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .btn-ch:hover { transform: scale(1.05); }
+        .ch-whatsapp { background-color: var(--success); }
+        .ch-telegram { background-color: var(--telegram); }
 
         /* Main Content Container */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
@@ -198,6 +270,7 @@
         </div>
     </div>
 
+    <!-- नेविगेशन बार -->
     <nav>
         <div class="logo-container">
             <img src="logo.jpg" id="customLogo" alt="DigiSolutions Logo" class="shop-logo">
@@ -208,12 +281,34 @@
         </div>
     </nav>
 
+    <!-- नया लाइव नोटिफिकेशन बार (यहाँ आप अपनी सूचना बदल सकते हैं) -->
+    <div class="notification-container">
+        <span class="notification-title"><i class="fa-solid fa-bell"></i> न्यू अपडेट</span>
+        <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="5">
+            🔥 सभी सरकारी नौकरियों के ऑनलाइन फॉर्म, कॉलेज एडमिशन, एडमिट कार्ड, रिजल्ट, और नई सरकारी योजनाओं की त्वरित सेवाएँ उपलब्ध हैं। किसी भी जानकारी के लिए नीचे दिए गए नंबर पर तुरंत संपर्क करें!
+        </marquee>
+    </div>
+
     <header class="hero">
         <h2>🏪 DigiSolutions Online Services</h2>
         <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, बैंकिंग लेनदेन, फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
+        
         <div class="btn-group">
             <a href="tel:+919199213137" class="btn btn-primary"><i class="fa-solid fa-phone"></i> अभी कॉल करें</a>
             <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="btn btn-primary" style="background-color: #007bff;"><i class="fa-solid fa-map-location-dot"></i> हमें Google पर देखें (Visit Now)</a>
+        </div>
+
+        <!-- केवल एक जगह ऑफिशियल चैनल लिंक्स -->
+        <div class="single-channel-box">
+            <h4>📢 हमारे ऑफिशियल चैनल्स से जुड़ें (डेली अपडेट्स)</h4>
+            <div class="channel-buttons">
+                <a href="https://whatsapp.com/channel/0029VagMfnXGJP8K2jhRBk07" target="_blank" class="btn-ch ch-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Channel
+                </a>
+                <a href="https://t.me/digisolutionsonlineservices" target="_blank" class="btn-ch ch-telegram">
+                    <i class="fa-brands fa-telegram"></i> Telegram Channel
+                </a>
+            </div>
         </div>
     </header>
 
