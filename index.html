@@ -12,6 +12,7 @@
             --dark: #1e293b;
             --light: #f8fafc;
             --success: #22c55e;
+            --danger: #ef4444;
         }
 
         * {
@@ -160,10 +161,70 @@
         }
         .btn:hover { background: #0056b3; transform: translateY(-2px); }
 
+        /* --- Live Notification Board Section --- */
+        .notification-board {
+            max-width: 1200px;
+            margin: 25px auto 0;
+            padding: 0 20px;
+        }
+        .noti-wrapper {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .noti-title {
+            background: var(--danger);
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 2;
+            position: relative;
+        }
+        .noti-title::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 10px solid var(--danger);
+        }
+        .noti-content-marquee {
+            width: 100%;
+            padding: 0 15px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        .noti-item {
+            display: inline-block;
+            margin-right: 50px;
+        }
+        .noti-item .badge-new {
+            background: var(--secondary);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
         /* --- Channels Section --- */
         .updates-container {
             max-width: 1200px;
-            margin: 30px auto 0;
+            margin: 20px auto 0;
             padding: 0 20px;
         }
 
@@ -278,12 +339,15 @@
             .info-bar .address-link { justify-content: center; text-align: center; }
             .logo-row { flex-direction: column; text-align: center; }
             .logo-text-wrapper { align-items: center; text-align: center; }
+            .noti-wrapper { flex-direction: column; align-items: flex-start; }
+            .noti-title { width: 100%; border-radius: 8px 8px 0 0; }
+            .noti-title::after { display: none; }
+            .noti-content-marquee { padding: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Header: Logo, Title and Tagline -->
     <header class="main-header">
         <div class="logo-container">
             <div class="logo-row">
@@ -295,7 +359,6 @@
             </div>
         </div>
 
-        <!-- Address and Social Icons under the logo section -->
         <div class="info-bar">
             <div>
                 <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="address-link">
@@ -309,7 +372,6 @@
         </div>
     </header>
 
-    <!-- Hero Welcome Section -->
     <div class="hero">
         <h2>DigiSolutions Online Services, Dhobiniya, Kishanganj</h2>
         <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, बैंकिंग सेवाएं , फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
@@ -318,7 +380,18 @@
         </div>
     </div>
 
-    <!-- Official Channels Section -->
+    <div class="notification-board">
+        <div class="noti-wrapper">
+            <div class="noti-title">
+                <i class="fa-solid fa-bell fa-bounce"></i> नवीनतम अपडेट्स:
+            </div>
+            <div class="noti-content-marquee">
+                <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" id="liveUpdatesMarquee">
+                    </marquee>
+            </div>
+        </div>
+    </div>
+
     <div class="updates-container">
         <div class="channel-box">
             <div style="display: flex; align-items: center; gap: 10px;">
@@ -336,7 +409,6 @@
         </div>
     </div>
 
-    <!-- Services Grid and Search Section -->
     <div class="container">
         
         <div class="info-strip">
@@ -354,18 +426,16 @@
                 <input type="text" id="serviceSearch" placeholder="जैसे: Aadhaar, PAN, Voter, Court, NBPDCL, Electricity, Pension...">
             </div>
 
-            <!-- Dynamically populated via Javascript with explicit links -->
             <div class="services-grid" id="servicesGrid"></div>
         </section>
 
     </div>
 
-    <!-- Footer Section -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
                 <h4 style="color: white; font-size: 1.4rem;">DigiSolutions</h4>
-                <p style="margin-top: 15px;">आपकी सुविधा, हमारा लक्ष्य। आज ही हमारे साइबर कैफ़े पर पधारें या फोन पर संपर्क करें। हम ग्राहकों को त्वरित और सही सर्विस देने के लिए प्रतिबद्ध हैं।</p>
+                <p style="margin-top: 15px;">आपकी सुविधा, हमारा लक्ष्य। आज ही हमारे साइबर कैफ़े पर आएं या फोन पर संपर्क करें। हम ग्राहकों को त्वरित और सही सर्विस देने के लिए प्रतिबद्ध हैं।</p>
             </div>
             <div class="footer-col">
                 <h4>Visit Now (अभी विजिट करें)</h4>
@@ -387,18 +457,30 @@
         </div>
     </footer>
 
-    <!-- Service Data and Search Functionality Script -->
     <script>
+        // -------------------------------------------------------------
+        // यहाँ आप नियमित रूप से अपने नए अपडेट्स बदल या बढ़ा सकते हैं:
+        // -------------------------------------------------------------
+        const notificationUpdates = [
+            "🎯 BPSC 72वीं परीक्षा के 1189 पदों पर बिना गलती के फॉर्म भरने का अंतिम मौका, आवेदन की आखिरी तारीख 31 मई 2026 है!।",
+            "👨🏻‍🎓पूर्णिया यूनिवर्सिटी UG एडमिशन 2026: सत्र 2026-30 (B.A/B.Sc/B.Com) के लिए ऑनलाइन आवेदन शुरू (अंतिम तिथि: 02 जून)।",
+            "💰बिहार स्कॉलरशिप 2026: मेधासॉफ्ट पोर्टल पर मैट्रिक, इंटर और स्नातक पास छात्रों के लिए ऑनलाइन आवेदन शुरू है।।",
+            "​🏆 SSC CGL भर्ती 2026: स्नातक पास युवाओं के लिए कंबाइंड ग्रेजुएट लेवल परीक्षा के ऑनलाइन आवेदन शुरू (अंतिम तिथि: 22 जून)।"
+        ];
+
+        // -------------------------------------------------------------
+        // सेवाओं की सूची (Services Data)
+        // -------------------------------------------------------------
         const servicesData = [
             { title: "RTPS सेवाएं", link: "https://serviceonline.bihar.gov.in/", icon: "fa-file-invoice", desc: "जाति, आवासीय, आय प्रमाण पत्र के साथ-साथ अब आचरण प्रमाण पत्र (Character Certificate) का नया आवेदन और डाउनलोड।", doc: "आधार कार्ड, फोटो, शपथ पत्र" },
             { title: "पैन कार्ड सेवाएं", link: "https://onlineservices.proteantech.in/paam/endUserRegisterContact.html", icon: "fa-id-card", desc: "नया पैन कार्ड आवेदन, खोए हुए पैन का सुधार या रीप्रिंट की त्वरित सुविधा।", doc: "आधार कार्ड, फोटो" },
             { title: "आधार अपडेट सेवाएं", link: "https://uidai.gov.in/en/", icon: "fa-address-card", desc: "आधार कार्ड में एड्रेस सुधार, स्टेटस जांच संबंधी ऑनलाइन कार्य की आधिकारिक जानकारी।", doc: "सहायक दस्तावेज" },
-            { title: "वोटर आईडी कार्ड सेवाएं", link: "https://voters.eci.gov.in/login", icon: "fa-check-to-slot", desc: "नया voter कार्ड बनाना, voter लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
+            { title: "वोटर आईडी कार्ड सेवाएं", link: "https://voters.eci.gov.in/login", icon: "fa-check-to-slot", desc: "नया वोटर कार्ड बनाना, वोटर लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
             { title: "बिहार-भूमि सेवाएं", link: "https://biharbhumi.bihar.gov.in/Biharbhumi/", icon: "fa-map-location-dot", desc: "ONLINE जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, म्युटेशन आवेदन और जन-शिकायत।", doc: "खाता/खेसरा/जमाबंदी विवरण" },
             { title: "भू-अभिलेख बिहार", link: "https://bhuabhilekh.bihar.gov.in/login?ref=aW5kZXgucGhw", icon: "fa-map", desc: "डिजिटल हस्ताक्षरित खतियान, जमाबंदी नक़ल और नक्शा निकालने सम्बन्धी लॉगिन सेवाएं।", doc: "खाता/खेसरा नंबर" },
             { title: "ई-निबंधन बिहार", link: "https://nibandhan.bihar.gov.in/", icon: "fa-gavel", desc: "जमीन और मकान रजिस्ट्री, अपॉइंटमेंट बुकिंग और ऑनलाइन सर्टिफाइड कॉपी सम्बन्धी निबंधन पोर्टल।", doc: "रजिस्ट्री दस्तावेज" },
-            { title: "कृषि-विभाग सेवाएं (बिहार)", link: "https://dbtagriculture.bihar.gov.in/", icon: "fa-wheat-awn", desc: "किसान पंजीकरण, डीजल व बीज अनुदान, कृषि इनपुट सब्सिडी और विभिन्न राज्य स्तरीय कृषि योजनाओं का ऑनलाइन लाभ।", doc: "आधार कार्ड, bank पासबुक, एलपीसी/जमीन रसीद" },
-            { title: "PM-किसान सम्मान निधि सेवाएं", link: "https://pmkisan.gov.in/", icon: "fa-tractor", desc: "प्रधानमंत्री किसान सम्मान निधि योजना के अंतर्गत नया पंजीकरण, e-KYC अपडेशन, और किस्त भुगतान स्टेटस की जांच।", doc: "आधार कार्ड, mobile नंबर, जमीन दस्तावेज" },
+            { title: "कृषि-विभाग सेवाएं (बिहार)", link: "https://dbtagriculture.bihar.gov.in/", icon: "fa-wheat-awn", desc: "किसान पंजीकरण, डीजल व बीज अनुदान, कृषि इनपुट सब्सिडी और विभिन्न राज्य स्तरीय कृषि योजनाओं का ऑनलाइन लाभ।", doc: "आधार कार्ड, बैंक पासबुक, एलपीसी/जमीन रसीद" },
+            { title: "PM-किसान सम्मान निधि सेवाएं", link: "https://pmkisan.gov.in/", icon: "fa-tractor", desc: "प्रधानमंत्री किसान सम्मान निधि योजना के अंतर्गत नया पंजीकरण, e-KYC, और किस्त भुगतान स्टेटस की जांच।", doc: "आधार कार्ड, मोबाइल नंबर, जमीन दस्तावेज" },
             { title: "ई-कोर्ट सेवाएं", link: "https://services.ecourts.gov.in/ecourtindia_v6/", icon: "fa-gavel", desc: "देश की जिला और अधीनस्थ अदालतों के केस स्टेटस, कोर्ट ऑर्डर, और वाद सूची (Cause List) की ऑनलाइन जानकारी।", doc: "केस नंबर / सीएनआर (CNR) नंबर" },
             { title: "पटना हाई-कोर्ट सेवाएं", link: "https://patnahighcourt.gov.in/", icon: "fa-building-columns", desc: "पटना उच्च न्यायालय से संबंधित केस की स्थिति, जजमेंट, डेली कॉज लिस्ट और अन्य कानूनी अपडेट की ऑनलाइन जांच।", doc: "केस नंबर / टोकन नंबर / साल" },
             { title: "सुप्रीम-कोर्ट सेवाएं", link: "https://www.sci.gov.in/", icon: "fa-scale-balanced", desc: "भारत के सर्वोच्च न्यायालय (Supreme Court) के केस स्टेटस, दैनिक आदेश, जजमेंट और लाइव हियरिंग से जुड़ी सेवाएं।", doc: "डायरी नंबर / केस नंबर" },
@@ -406,9 +488,9 @@
             { title: "आयुष्मान भारत सेवाएं", link: "https://beneficiary.nha.gov.in/", icon: "fa-heart-pulse", desc: "5 लाख रुपये तक मुफ्त इलाज वाला आयुष्मान कार्ड पात्रता जाँच और नया पंजीकरण।", doc: "राशन कार्ड, आधार" },
             { title: "ई-श्रम सेवाएं", link: "https://eshram.gov.in/indexmain", icon: "fa-users", desc: "असंगठित क्षेत्र के श्रमिकों के लिए ई-श्रम कार्ड का नया पंजीकरण और अपडेट।", doc: "आधार कार्ड, bank खाता" },
             { title: "पासपोर्ट सेवाएं", link: "https://www.passportindia.gov.in/psp", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
-            { title: "पेंशन सेवाएं (बिहार)", link: "https://www.sspmis.bihar.gov.in/HomePage", icon: "fa-hand-holding-hand", desc: "मुख्यमंत्री वृद्धजन पेंशन, विधवा एवं दिव्यांग पेंशन योजना का नया ऑनलाइन आवेदन।", doc: "आधार, bank पासबुक, आयु प्रमाण" },
+            { title: "पेंशन सेवाएं (बिहार)", link: "https://www.sspmis.bihar.gov.in/HomePage", icon: "fa-hand-holding-hand", desc: "मुख्यमंत्री वृद्धजन पेंशन, विधवा एवं दिव्यांग पेंशन योजना का नया ऑनलाइन आवेदन।", doc: "आधार, बैंक पासबुक, आयु प्रमाण" },
             { title: "ई-लाभार्थी सेवाएं (बिहार)", link: "https://elabharthi.bihar.gov.in/", icon: "fa-wallet", desc: "पेंशन भुगतान की स्थिति, जीवन प्रमाण पत्र (KYC) वेरिफिकेशन ट्रैकिंग स्टेटस।", doc: "आधार नंबर / लाभार्थी आईडी" },
-            { title: "EPFO सेवाएं", link: "https://www.epfindia.gov.in/site_en/", icon: "fa-building-columns", desc: "PF बैलेंस चेक, एडवांस निकासी, ऑनलाइन क्लेम और UAN एक्टिवेशन की सुविधा।", doc: "UAN नंबर, mobile लिंक" },
+            { title: "EPFO सेवाएं", link: "https://www.epfindia.gov.in/site_en/", icon: "fa-building-columns", desc: "PF बैलेंस चेक, एडवांस निकासी, ऑनलाइन क्लेम और UAN एक्टिवेशन की सुविधा।", doc: "UAN नंबर, मोबाइल लिंक" },
             { title: "सहयोग RTMS पोर्टल, बिहार", link: "https://sahyog.bihar.gov.in/Sahyog/Default.aspx", icon: "fa-handshake-angle", desc: "विभिन्न सरकारी कल्याणकारी योजनाओं, सहायता शिविरों और प्रशासनिक राहत लाभों को प्राप्त करने हेतु आवेदन।", doc: "योग्यता प्रमाण पत्र, फोटो" },
             { title: "RTI ऑनलाइन", link: "https://rtionline.gov.in/", icon: "fa-scale-balanced", desc: "सूचना का अधिकार (RTI) के तहत केंद्र सरकार के किसी भी विभाग से ऑनलाइन जानकारी मांगने की सुविधा।", doc: "पहचान पत्र, आवेदन विवरण" },
             { title: "RTI बिहार (जानकारी)", link: "https://jaankari.bihar.gov.in/", icon: "fa-circle-info", desc: "बिहार सरकार के विभागों से सूचना का अधिकार के तहत जानकारी प्राप्त करने का स्टेट पोर्टल।", doc: "आवेदन प्रारूप, पहचान पत्र" },
@@ -422,7 +504,7 @@
             { title: "मेधासॉफ्ट छात्रवृति पोर्टल, बिहार", link: "https://medhasoft.bihar.gov.in/", icon: "fa-laptop-code", desc: "बिहार सरकार द्वारा कक्षा 1 से 12वीं तक के छात्रों के लिए पोशाक, साइकिल और छात्रवृत्ति ट्रैकिंग।", doc: "बैंक खाता, दाखिला संख्या" },
             { title: "AEPS Money Transfer", link: "https://www.instantpay.in/login", icon: "fa-money-bill-transfer", desc: "आधार इनेबल्ड पेमेंट सिस्टम (AEPS) के माध्यम से किसी भी बैंक से अंगूठा लगाकर सुरक्षित पैसे की निकासी।", doc: "बैंक खाता / आधार लिंक" },
             { title: "Travel Tickets Services", link: "https://www.irctc.co.in/", icon: "fa-plane-departure", desc: "रेलवे कंफर्म टिकट बुकिंग, तत्काल टिकट, फ्लाइट और लंबी दूरी की बस बुकिंग की त्वरित सुविधा।", doc: "यात्री का नाम व वैध आईडी" },
-            { title: "Online Forms & Results", link: "#", icon: "fa-file-signature", desc: "सभी सरकारी नौकरियों (SSC, Railway, BPSC, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट, फोटो" },
+            { title: "Online Forms & Results", link: "#", icon: "fa-file-signature", desc: "सभी सरकारी नौकरियों (SSC, Railway, BPSC, Army), एडमिशन फॉर्म्स को भरना और एडमिट कार्ड/रिजल्ट प्रिंट।", doc: "योग्यता सर्टिफिकेट, फोटो, हस्ताक्षर" },
             { title: "NBPDCL बिजली सेवाएं", link: "https://nbpdcl.co.in/", icon: "fa-bolt", desc: "उत्तर बिहार बिजली बिल (NBPDCL) चेक करना, ऑनलाइन बिल भुगतान, रसीद डाउनलोड और नए कनेक्शन का आवेदन एवं जानकारी, शिकायत-करना।", doc: "कंज्यूमर नंबर (CA Number)" },
             { title: "Bill Payments", link: "#", icon: "fa-receipt", desc: "मोबाइल प्रीपेड/पोस्टपेड बिल, डीटीएच रिचार्ज एवं अन्य सभी यूटिलिटी भुगतान।", doc: "मोबाइल नंबर, DTH ID, Wi-Fi ID, LOAN A/C NO." },
             { title: "Photo, Printing, Lamination", link: "#", icon: "fa-print", desc: "तुरंत पासपोर्ट साइज कलाकार फोटो, ब्लैक एंड व्हाइट/कलर फोटोकॉपी, हाई-क्वालिटी डाक्यूमेंट्स प्रिंटिंग और लैमिनेशन।", doc: "हार्ड / सॉफ्ट कॉपी" }
@@ -430,7 +512,18 @@
 
         const servicesGrid = document.getElementById('servicesGrid');
         const searchInput = document.getElementById('serviceSearch');
+        const marqueeContainer = document.getElementById('liveUpdatesMarquee');
 
+        // 1. नोटिफिकेशन लोड करने का फंक्शन
+        function loadNotifications() {
+            let htmlContent = "";
+            notificationUpdates.forEach(text => {
+                htmlContent += `<span class="noti-item"><span class="badge-new">NEW</span> ${text}</span>`;
+            });
+            marqueeContainer.innerHTML = htmlContent;
+        }
+
+        // 2. सर्विसेज दिखाने का फंक्शन
         function displayServices(services) {
             servicesGrid.innerHTML = '';
             if(services.length === 0) {
@@ -459,6 +552,7 @@
         }
 
         // Initialize display
+        loadNotifications();
         displayServices(servicesData);
 
         // Search algorithm
