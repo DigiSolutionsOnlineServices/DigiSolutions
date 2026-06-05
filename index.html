@@ -377,7 +377,7 @@
     </header>
 
     <div class="hero">
-        <h2>DigiSolutions Online Services, Dhobiniya, Kishanganj</h2>
+        <h2>DigiSolutions Online Services</h2>
         <p>आपके शहर और गाँव में सभी प्रकार की सरकारी योजनाएं, बैंकिंग सेवाएं , फॉर्म्स और प्रिंटिंग के लिए सबसे भरोसेमंद और डिजिटल केंद्र।</p>
         <div>
             <a href="https://maps.app.goo.gl/KsEybuKyX5bRQtJY7" target="_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> हमें Google पर देखें (Visit Now)</a>
@@ -427,7 +427,7 @@
 
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="serviceSearch" placeholder="जैसे: CSC, Aadhaar, PAN, Voter, Student Credit Card, Udyami, GST...">
+                <input type="text" id="serviceSearch" placeholder="जैसे: CSC, Aadhaar, PAN, Voter, Ration Card, Student Credit Card...">
             </div>
 
             <div class="services-grid" id="servicesGrid"></div>
@@ -466,15 +466,15 @@
         // यहाँ आप नियमित रूप से अपने नए अपडेट्स बदल या बढ़ा सकते हैं:
         // -------------------------------------------------------------
         const notificationUpdates = [
-            "🎯BPSC 72वीं परीक्षा के 1189 पदों हेतु फॉर्म भरने का अंतिम मौका, आवेदन की आखिरी तारीख 31 मई 2026 है!।",
+            "बिहार राशन कार्ड Smart PDS 2.0 के तहत नया राशन कार्ड, नाम जोड़ने, नाम हटाने और संशोधन हेतु ऑनलाइन आवेदन चालू है ।",
             "बिहार बोर्ड (BSEB) D.El.Ed प्रवेश परीक्षा 2026 के एडमिट कार्ड जारी कर दिए गए हैं। परीक्षा 8 जून से 22 जून 2026 तक आयोजित की जाएगी।",
-            "👨🏻‍🎓पूर्णिया यूनिवर्सिटी UG एडमिशन 2026: सत्र 2026-30 (B.A/B.Sc/B.Com) के लिए ऑनलाइन आवेदन शुरू (अंतिम तिथि: 02 जून)।",
+            "👨🏻‍🎓पूर्णिया यूनिवर्सिटी UG एडमिशन 2026: सत्र 2026-30 (B.A/B.Sc/B.Com) के लिए ऑनलाइन आवेदन शुरू (अंतिम तिथि: 07 जून)।",
             "💰बिहार स्कॉलरशिप 2026: मेधासॉफ्ट पोर्टल पर मैट्रिक, इंटर और स्नातक पास छात्रों के लिए ऑनलाइन आवेदन शुरू है।।",
             "​🏆SSC CGL भर्ती 2026: स्नातक पास युवाओं के लिए कंबाइंड ग्रेजुएट लेवल परीक्षा के ऑनलाइन आवेदन शुरू (अंतिम तिथि: 22 जून)।"
         ];
 
         // -------------------------------------------------------------
-        // सेवाओं की सूची (Services Data) - आपके बताए नए क्रम में री-अरेंज्ड
+        // सेवाओं की सूची (Services Data)
         // -------------------------------------------------------------
         const servicesData = [
             // ==========================================
@@ -485,10 +485,11 @@
             // ==========================================
             // [क्रम 2] --- श्रेणी 6: मूल नागरिक दस्तावेज एवं पहचान पत्र ---
             // ==========================================
-            { title: "RTPS सेवाएं", link: "https://serviceonline.bihar.gov.in/", icon: "fa-file-invoice", desc: "जाति, आवासीय, आय प्रमाण पत्र के साथ-साथ अब आचरण प्रमाण पत्र (Character Certificate) का नया आवेदन और डाउनलोड।", doc: "आधार कार्ड, फोटो, शपथ पत्र" },
+            { title: "RTPS सेवाएं", link: "https://serviceonline.bihar.gov.in/", icon: "fa-file-invoice", desc: "जाति, आवासीय, आय, आचरण प्रमाण पत्र नया आवेदन और डाउनलोड, जन्म-मृत्यु प्रमाण पत्र ऑनलाइन आवेदन (CRS)।", doc: "आधार कार्ड, फोटो, शपथ पत्र" },
             { title: "पैन कार्ड सेवाएं", link: "https://onlineservices.proteantech.in/paam/endUserRegisterContact.html", icon: "fa-id-card", desc: "नया पैन कार्ड आवेदन, खोए हुए पैन का सुधार या रीप्रिंट की त्वरित सुविधा।", doc: "आधार कार्ड, फोटो" },
-            { title: "आधार अपडेट सेवाएं", link: "https://uidai.gov.in/en/", icon: "fa-address-card", desc: "आधार कार्ड में एड्रेस सुधार, स्टेटस जांच संबंधी ऑनलाइन कार्य की आधिकारिक जानकारी।", doc: "सहायक दस्तावेज" },
+            { title: "आधार अपडेट सेवाएं", link: "https://uidai.gov.in/en/", icon: "fa-address-card", desc: "आधार कार्ड में एड्रेस सुधार, स्टेटस जांच, ई-आधार डाउनलोड, मौजूदा मोबाइल न० अपडेट आदि।", doc: "सहायक दस्तावेज" },
             { title: "वोटर आईडी कार्ड सेवाएं", link: "https://voters.eci.gov.in/login", icon: "fa-check-to-slot", desc: "नया वोटर कार्ड बनाना, वोटर लिस्ट में नाम खोजना, सुधार करना या पीवीसी कार्ड आर्डर।", doc: "आयु प्रमाण, फोटो" },
+            { title: "राशन कार्ड सेवाएं (बिहार)", link: "https://br.smartpds.nic.in/login", icon: "fa-bowl-rice", desc: "बिहार राशन कार्ड प्रबंधन प्रणाली (Smart PDS) लॉगिन, नया राशन कार्ड ऑनलाइन आवेदन, संशोधन तथा लाभार्थी विवरण की जांच।", doc: "परिवार के सभी सदस्यों का आधार कार्ड, सामूहिक फोटो, आय व निवास प्रमाण पत्र, बैंक पासबुक आदि " },
             { title: "पासपोर्ट सेवाएं", link: "https://www.passportindia.gov.in/psp", icon: "fa-passport", desc: "नए फ्रेश पासपोर्ट या री-इश्यू के लिए ऑनलाइन फॉर्म भरना और अपॉइंटमेंट स्लॉट बुक करना।", doc: "मैट्रिक मार्कशीट, आधार" },
             { title: "ड्राइविंग लाइसेंस सेवाएं", link: "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do", icon: "fa-car", desc: "लर्निंग लाइसेंस, पक्का driving लाइसेंस आवेदन, नवीनीकरण और स्लॉट बुकिंग।", doc: "आधार, आयु एवं एड्रेस प्रूफ" },
 
@@ -496,7 +497,7 @@
             // [क्रम 3] --- श्रेणी 5: बिहार राज्य भूमि एवं पेंशन सेवाएं ---
             // ==========================================
             { title: "भूमि-जानकारी Advance Search", link: "https://bhumijankari.bihar.gov.in/BiharPortal/Admin/AdvSearch/AdvSearch.aspx", icon: "fa-magnifying-glass-location", desc: "बिहार में पुरानी रजिस्ट्री डीड, केवाला रिकॉर्ड, क्रेता/विक्रेता के नाम से जमीन की विस्तृत एडवांस खोज।", doc: "रजिस्ट्री वर्ष, जिला, अंचल, मौजा या नाम" },
-            { title: "बिहार-भूमि सेवाएं", link: "https://biharbhumi.bihar.gov.in/Biharbhumi/", icon: "fa-map-location-dot", desc: "ONLINE जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, म्युटेशन आवेदन और जन-शिकायत।", doc: "खाता/खेसरा/जमाबंदी विवरण" },
+            { title: "बिहार-भूमि सेवाएं", link: "https://biharbhumi.bihar.gov.in/Biharbhumi/", icon: "fa-map-location-dot", desc: "ऑनलाइन जमीन की रसीद काटना, एलपीसी (LPC) आवेदन, म्युटेशन आवेदन और जन-शिकायत।", doc: "खाता/खेसरा/जमाबंदी विवरण" },
             { title: "भू-अभिलेख बिहार", link: "https://bhuabhilekh.bihar.gov.in/login?ref=aW5kZXgucGhw", icon: "fa-map", desc: "डिजिटल हस्ताक्षरित खतियान, जमाबंदी नक़ल और नक्शा निकालने सम्बन्धी लॉगिन सेवाएं।", doc: "खाता/खेसरा नंबर" },
             { title: "ई-निबंधन बिहार", link: "https://nibandhan.bihar.gov.in/", icon: "fa-gavel", desc: "जमीन और मकान रजिस्ट्री, अपॉइंटमेंट बुकिंग और ऑनलाइन सर्टिफाइड कॉपी सम्बन्धी निबंधन पोर्टल।", doc: "रजिस्ट्री दस्तावेज" },
             { title: "पेंशन सेवाएं (बिहार)", link: "https://www.sspmis.bihar.gov.in/HomePage", icon: "fa-hand-holding-hand", desc: "मुख्यमंत्री वृद्धजन पेंशन, विधवा एवं दिव्यांग पेंशन योजना का नया ऑनलाइन आवेदन।", doc: "आधार, bank पासबुक, आयु प्रमाण" },
@@ -505,7 +506,7 @@
             // ==========================================
             // [क्रम 4] --- श्रेणी 8: शिक्षा एवं यूनिवर्सिटी पोर्टल ---
             // ==========================================
-            { title: "बिहार स्टूडेंट क्रेडिट कार्ड", link: "https://www.7nishchay-yuvaupmission.bihar.gov.in/", icon: "fa-user-graduate", desc: "उच्च शिक्षा (7 निश्चय योजना) के लिए बिहार सरकार द्वारा ₹4 लाख तक का शिक्षा ऋण हेतु ऑनलाइन आवेदन।", doc: "10वीं/12वीं मार्कशीट, कॉलेज दाखिला रसीद, आधार, फोटो" },
+            { title: "बिहार स्टूडेंट क्रेडिट कार्ड", link: "https://www.7nishchay-yuvaupmission.bihar.gov.in/", icon: "fa-user-graduate", desc: "उच्च शिक्षा (7 निश्चय योजना) के लिए बिहार सरकार द्वारा ₹4 लाख तक का शिक्षा ऋण हेतु ऑनलाइन आवेदन।", doc: "10वीं/12वीं मार्कशीट, college दाखिला रसीद, आधार, फोटो" },
             { title: "IGNOU सेवाएं", link: "https://www.ignou.ac.in/", icon: "fa-graduation-cap", desc: "इग्नू यूनिवर्सिटी न्यू एडमिशन, री-रजिस्ट्रेशन, असाइनमेंट डाउनलोड ओर रिजल्ट पोर्टल।", doc: "शैक्षणिक दस्तावेज" },
             { title: "BSEB OFSS नामांकन पोर्टल", link: "https://ofssbihar.net/Higher-Education/index.html", icon: "fa-school", desc: "बिहार विद्यालय परीक्षा समिति द्वारा इंटर (11वीं) नामांकन हेतु ऑनलाइन आवेदन।", doc: "मैट्रिक/इंटर मार्कशीट" },
             { title: "पूर्णिया विश्वविद्यालय सेवाएं", link: "https://purneau.ac.in/", icon: "fa-book-open", desc: "पूर्णिया यूनिवर्सिटी के परीक्षा फॉर्म, रजिस्ट्रेशन, एडमिशन और कॉलेज सम्बंधित डिजिटल अपडेट।", doc: "रजिस्ट्रेशन नंबर, रोल नंबर" },
